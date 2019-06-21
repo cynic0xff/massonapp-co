@@ -20,8 +20,10 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>masonapp</span>
+      <a (click)="drawer.toggle(); toggle_menu();" id="nav-toggle">
+          <i class="material-icons">{{ btn_toggle_text }}</i>
+        </a>
+      <div>mason</div>
     </mat-toolbar>
-    <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>

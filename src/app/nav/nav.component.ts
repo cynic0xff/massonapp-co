@@ -15,6 +15,16 @@ export class NavComponent {
       map(result => result.matches)
     );
 
+    //menu text
+    btn_toggle_text: string = "toggle_on";
+
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  toggle_menu() {
+
+  if(this.btn_toggle_text == 'toggle_on')
+     this.btn_toggle_text = 'toggle_off';
+    else
+      this.btn_toggle_text = 'toggle_on';
+  }
 }
