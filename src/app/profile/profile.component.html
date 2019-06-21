@@ -1,6 +1,20 @@
 <div class="container-fluid jumbotron">
   <div class="row">
-    <div class="col-sm-6">Profile dsdffsssaasdasdasd ad ad a sd asd a sd asd as d asd a das </div>
-    <div class="col-sm-6">TProfile dsdffsssaasdasdasd ad ad a sd asd a sd asd as d asd a das </div>
+    <div class="col-sm-12"><p class="display-4">Profile</p></div>
+    <div class="col-sm-6">
+      <mat-form-field class="w-100 pr-2">
+        <input matInput placeholder="First name" value="{{ default_value }}" class="full-width-field">
+      </mat-form-field>
+    </div>
+    <div class="col-sm-6">
+        <mat-form-field class="w-100 pr-2">
+            <input matInput placeholder="Middle name" value="{{ default_value }}">
+        </mat-form-field>
+    </div>
+    <div class="col-sm-6">
+        <mat-form-field class="w-100 pr-2">
+            <input matInput placeholder="Last name" value="{{ default_value }}">
+        </mat-form-field>
+    </div>
   </div>
 </div>

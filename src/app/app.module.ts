@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
+import { 
+  MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, 
+  MatGridListModule, MatCardModule, MatMenuModule, MatInputModule, MatFormFieldModule } from '@angular/material';
 import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
@@ -28,7 +30,8 @@ import { ProfileComponent } from './profile/profile.component';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

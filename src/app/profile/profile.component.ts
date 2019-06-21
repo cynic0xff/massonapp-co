@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  default_value: string = 'Default-Value';
+  
   constructor() { }
 
   ngOnInit() {
