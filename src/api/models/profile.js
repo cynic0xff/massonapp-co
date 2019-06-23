@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let profile = new Schema({
-    first_name: String
-}, {
+// Define collection and schema for Product
+let Profile = new Schema({
+  first_name: {
+    type: String
+  }
+},{
     collection: 'Profile'
 });
+
+module.exports = mongoose.model('Profile', Profile);
