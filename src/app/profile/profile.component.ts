@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, MinLengthValidator } from '@angular/forms';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -21,9 +21,10 @@ export class ProfileComponent implements OnInit {
 
   createForm() {
     this.angForm = this.fb.group({
-      first_name: [''],
+      first_name: ['', Validators.required],
       middle_name: [''],
-      last_name: ['']
+      last_name: ['', Validators.required],
+      email: ['', Validators.required]
     });
   }
 
@@ -31,8 +32,8 @@ export class ProfileComponent implements OnInit {
     //TODO
   }
 
-  save(first_name, middle_name, last_name) {
-    this.dataSvc.saveProfile(first_name, middle_name, last_name);
+  save(profile_data) {
+    //this.dataSvc.saveProfile(profile_data.first_name, profile_data.middle_name, profile_data.last_name, profile_data.email);
+    this.dataSvc.saveProfile(profile_data);
   }
-
 }

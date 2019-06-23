@@ -28,37 +28,30 @@
             formControlName="last_name" 
                 #last_name>
         </mat-form-field>
+        <div *ngIf="angForm.controls['last_name'].invalid && (angForm.controls['last_name'].dirty || angForm.controls['last_name'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['last_name'].errors.required">
+              Last name is required.
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-form-field class="w-100 pr-2">
+            <input matInput placeholder="Email" value="{{ default_value }}" class="full-width-field" 
+            formControlName="email" 
+                #email>
+        </mat-form-field>
+        <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['email'].errors.required">
+              Email is required.
+            </div>
+        </div>
     </div>
     <div class="col-sm-12 text-right">
       <button mat-flat-button color="primary" class="m-2 btn">Reset</button> 
-      <button mat-flat-button color="primary" (click)="save(first_name.value, middle_name.value, last_name.value)" class="m-2 btn">Save</button>
-      </div>
+      <!-- <button mat-flat-button color="primary" (click)="save(first_name.value, middle_name.value, last_name.value, email.value)" class="m-2 btn">Save</button>-->
+      <button mat-flat-button color="primary" (click)="save(angForm.value)" class="m-2 btn">Save</button>  
+    </div>
   </div>
   </div>
 </form>
-
-<!--
-  <div class="card">
-      <div class="card-body">
-        <form [formGroup]="angForm" novalidate>
-          <div class="form-group">
-            <label class="col-md-4">Product Name</label>
-            <input type="text" class="form-control" 
-              formControlName="last_name" 
-              #last_name />
-          </div>
-          <div *ngIf="angForm.controls['last_name'].invalid && (angForm.controls['last_name'].dirty || angForm.controls['last_ame'].touched)" class="alert alert-danger">
-            <div *ngIf="angForm.controls['last_name'].errors.required">
-              Product Name is required.
-            </div>
-          </div>
-          <div class="form-group">
-            <button (click)="save(last_name.value)" type="submit" class="btn btn-primary"
-            [disabled]="angForm.pristine || angForm.invalid" >
-              Create Product
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  -->

@@ -11,16 +11,9 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  saveProfile(first_name, middle_name, last_name) {
+  saveProfile(profile_data) {
     
-    //create an object with the vars passed in
-    const obj = {
-      first_name,
-      middle_name,
-      last_name
-    };
-
-    this.http.post(`${this.url}/add`, obj)
+    this.http.post(`${this.url}/add`, profile_data)
     .subscribe( res => console.log('Saved profile successfully'));
   }
 
