@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,18 +10,27 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   default_value: string = '';
+  angForm: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder, private dataSvc: DataService) { 
+    this.createForm();
+  }
 
   ngOnInit() {
   }
 
-  reset() {
-    
+  createForm() {
+    this.angForm = this.fb.group({
+      ProductName: ['']
+    });
   }
 
-  save() {
-    
+  reset() {
+    //TODO
+  }
+
+  save(first_name) {
+    this.dataSvc.saveProfile(first_name);
   }
 
 }
