@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit {
 
   createForm() {
     this.angForm = this.fb.group({
-      ProductName: ['']
+      last_name: ['']
     });
   }
 
