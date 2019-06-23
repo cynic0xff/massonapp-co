@@ -14,6 +14,9 @@ let Profile = new Schema({
   },
   email: {
     type: String
+  },
+  phone: {
+    type: String
   }
 },{
     collection: 'Profile'

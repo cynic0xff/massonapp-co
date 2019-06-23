@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, MinLengthValidator } from '@angular/forms';
 import { DataService } from '../services/data.service';
+import { FormControl } from '@angular/forms';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +13,13 @@ export class ProfileComponent implements OnInit {
 
   default_value: string = '';
   angForm: FormGroup;
+  events: string[] = [];
+  ea_date: string;
 
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.value}`);
+    this.ea_date = event.value.toString();
+  }
   constructor(private fb: FormBuilder, private dataSvc: DataService) { 
     this.createForm();
   }
@@ -24,7 +32,9 @@ export class ProfileComponent implements OnInit {
       first_name: ['', Validators.required],
       middle_name: [''],
       last_name: ['', Validators.required],
-      email: ['', Validators.required]
+      email: ['', Validators.required],
+      phone: ['', Validators.required],
+      ea_date: [this.ea_date]
     });
   }
 
@@ -33,7 +43,8 @@ export class ProfileComponent implements OnInit {
   }
 
   save(profile_data) {
-    //this.dataSvc.saveProfile(profile_data.first_name, profile_data.middle_name, profile_data.last_name, profile_data.email);
-    this.dataSvc.saveProfile(profile_data);
+    console.log(profile_data);
+
+    //this.dataSvc.saveProfile(profile_data);
   }
 }

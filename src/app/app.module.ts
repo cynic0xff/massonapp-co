@@ -8,7 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { 
   MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, 
-  MatGridListModule, MatCardModule, MatMenuModule, MatInputModule, MatFormFieldModule } from '@angular/material';
+  MatGridListModule, MatCardModule, MatMenuModule, MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule  } from '@angular/material';
 import {MatStepperModule} from '@angular/material/stepper';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -39,9 +39,11 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [ MatDatepickerModule ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
