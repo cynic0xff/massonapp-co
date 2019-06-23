@@ -17,7 +17,9 @@
     </div>
     <div class="col-sm-6">
         <mat-form-field class="w-100 pr-2">
-            <input matInput placeholder="Middle name" value="{{ default_value }}">
+            <input matInput placeholder="Middle name" value="{{ default_value }}" class="full-width-field"
+            formControlName="middle_name"
+            #middle_name>
         </mat-form-field>
     </div>
     <div class="col-sm-6">
@@ -29,7 +31,7 @@
     </div>
     <div class="col-sm-12 text-right">
       <button mat-flat-button color="primary" class="m-2 btn">Reset</button> 
-      <button mat-flat-button color="primary" (click)="save(first_name.value, last_name.value)" class="m-2 btn">Save</button>
+      <button mat-flat-button color="primary" (click)="save(first_name.value, middle_name.value, last_name.value)" class="m-2 btn">Save</button>
       </div>
   </div>
   </div>
