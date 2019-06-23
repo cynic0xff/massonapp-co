@@ -11,11 +11,12 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  saveProfile(first_name) {
+  saveProfile(first_name, last_name) {
     
     //create an object with the vars passed in
     const obj = {
-      first_name
+      first_name,
+      last_name
     };
 
     this.http.post(`${this.url}/add`, obj)

@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
 
   createForm() {
     this.angForm = this.fb.group({
+      first_name: [''],
       last_name: ['']
     });
   }
@@ -29,8 +30,8 @@ export class ProfileComponent implements OnInit {
     //TODO
   }
 
-  save(first_name) {
-    this.dataSvc.saveProfile(first_name);
+  save(first_name, last_name) {
+    this.dataSvc.saveProfile(first_name, last_name);
   }
 
 }
