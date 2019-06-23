@@ -12,6 +12,12 @@ $primary: mat-color($app-primary);
 $accent: mat-color($app-accent);
 $warn: mat-color($app-warn);
 
+//text constants
+$input-text-color: #666;
+
+//button constants
+$btn-outline: #666;
+
 //nav
 .material-icons {
     font-size: 4rem;
@@ -20,12 +26,12 @@ $warn: mat-color($app-warn);
 
 .mat-form-field-infix {
     font-size: 1.2rem;
-    color: #666;
+    color: $input-text-color;
 }
 
 //buttons
 .btn {
-    border: 1px solid $primary !important;
+    border: 1px solid #666 !important;
 }
 .btn:hover {
     background-color: transparent;
