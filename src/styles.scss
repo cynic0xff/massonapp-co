@@ -7,6 +7,12 @@
     cursor: pointer;
 }
 
+.mat-form-field-infix {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* media queries */
 @media screen and (max-width: 600px) {
 
     //nav
