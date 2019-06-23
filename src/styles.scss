@@ -1,5 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+
+// Copy the palettes from your selected theme (usually theme.scss).
+$app-primary: mat-palette($mat-grey);
+$app-accent:  mat-palette($mat-light-blue);
+$app-warn:    mat-palette($mat-pink);
+
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
 
 //nav
 .material-icons {
@@ -12,8 +23,18 @@
     color: #666;
 }
 
+//buttons
+.btn {
+    border: 1px solid $primary !important;
+}
+.btn:hover {
+    background-color: transparent;
+    border: 1px solid black;
+}
+
 /* media queries */
-@media screen and (max-width: 600px) {
+$breakpoint: 960px;
+@media screen and (max-width: $breakpoint) {
 
     //nav
     #nav-toggle {
