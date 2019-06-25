@@ -17,6 +17,12 @@ let Profile = new Schema({
   },
   phone: {
     type: String
+  },
+  ea_date: {
+    type: String
+  },
+  fc_date: {
+    type: String
   }
 },{
     collection: 'Profile'

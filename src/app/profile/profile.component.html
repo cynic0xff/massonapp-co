@@ -64,12 +64,22 @@
     </div>
     <div class="col-sm-4">
       <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Input & change events"
+        <input matInput [matDatepicker]="picker" placeholder="EA Date Initiation"
               (dateInput)="addEvent('input', $event)"
               formControlName="ea_date"
+              value="{{ ea_date }}"
               #ea_date>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="fc_picker" placeholder="FC Date Initiation"
+              (dateInput)="addEvent('input', $event)"
+              formControlName="fc_date"
+              #fc_date>
+        <mat-datepicker-toggle matSuffix [for]="fc_picker"></mat-datepicker-toggle>
+        <mat-datepicker #fc_picker></mat-datepicker>
       </mat-form-field>
     </div>
     <div class="col-sm-4">

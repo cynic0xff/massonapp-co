@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
   angForm: FormGroup;
   events: string[] = [];
   ea_date: string;
+  fc_date: string;
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.events.push(`${type}: ${event.value}`);
@@ -34,7 +35,8 @@ export class ProfileComponent implements OnInit {
       last_name: ['', Validators.required],
       email: ['', Validators.required],
       phone: ['', Validators.required],
-      ea_date: [this.ea_date]
+      ea_date: [this.ea_date],
+      fc_date: [this.fc_date]
     });
   }
 
@@ -43,8 +45,6 @@ export class ProfileComponent implements OnInit {
   }
 
   save(profile_data) {
-    console.log(profile_data);
-
-    //this.dataSvc.saveProfile(profile_data);
+    this.dataSvc.saveProfile(profile_data);
   }
 }

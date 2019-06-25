@@ -12,6 +12,8 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   saveProfile(profile_data) {
+
+    console.log(profile_data);
     
     this.http.post(`${this.url}/add`, profile_data)
     .subscribe( res => console.log('Saved profile successfully'));
