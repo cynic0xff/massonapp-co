@@ -13,13 +13,13 @@ export class ProfileComponent implements OnInit {
 
   default_value: string = '';
   angForm: FormGroup;
-  events: string[] = [];
   ea_date: string;
   fc_date: string;
+  mm_date: string;
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-    this.events.push(`${type}: ${event.value}`);
-    this.ea_date = event.value.toString();
+    //this.events.push(`${type}: ${event.value}`);
+    //this.ea_date = event.value.toString();
   }
   constructor(private fb: FormBuilder, private dataSvc: DataService) { 
     this.createForm();
@@ -36,7 +36,8 @@ export class ProfileComponent implements OnInit {
       email: ['', Validators.required],
       phone: ['', Validators.required],
       ea_date: [this.ea_date],
-      fc_date: [this.fc_date]
+      fc_date: [this.fc_date],
+      mm_date: [this.mm_date]
     });
   }
 

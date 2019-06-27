@@ -7,6 +7,9 @@ let Profile = require('../models/Profile');
 
 profileRoutes.route('/add').post(function(req, res) {
     let profile = new Profile(req.body);
+
+    console.log(`Saving data: ${profile}`);
+    
     profile.save()
     .then(profile => {
         res.status(200).json({'Profile': 'Has been saved'});

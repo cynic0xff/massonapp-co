@@ -60,19 +60,19 @@
     </div>
 
     <div class="col-sm-6">
-        BLANK
+        
     </div>
     <div class="col-sm-4">
       <mat-form-field>
         <input matInput [matDatepicker]="picker" placeholder="EA Date Initiation"
               (dateInput)="addEvent('input', $event)"
               formControlName="ea_date"
-              value="{{ ea_date }}"
               #ea_date>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-
+    </div>
+    <div class="col-sm-4">
       <mat-form-field>
         <input matInput [matDatepicker]="fc_picker" placeholder="FC Date Initiation"
               (dateInput)="addEvent('input', $event)"
@@ -83,9 +83,15 @@
       </mat-form-field>
     </div>
     <div class="col-sm-4">
-      TWO
-      </div>
-    <div class="col-sm-4">Three</div>
+      <mat-form-field>
+          <input matInput [matDatepicker]="mm_picker" placeholder="MM Date Initiation"
+                (dateInput)="addEvent('input', $event)"
+                formControlName="mm_date"
+                #mm_date>
+          <mat-datepicker-toggle matSuffix [for]="mm_picker"></mat-datepicker-toggle>
+          <mat-datepicker #mm_picker></mat-datepicker>
+        </mat-form-field>
+    </div>
     <div class="col-sm-12 text-right">
       <button mat-flat-button color="primary" class="m-2 btn">Reset</button>
       <button mat-flat-button color="primary" (click)="save(angForm.value)" class="m-2 btn">Save</button>  

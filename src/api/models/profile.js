@@ -23,6 +23,9 @@ let Profile = new Schema({
   },
   fc_date: {
     type: String
+  },
+  mm_date: {
+    type: String
   }
 },{
     collection: 'Profile'
