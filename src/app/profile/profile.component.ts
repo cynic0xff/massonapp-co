@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, MinLengthValidator } from '@angular
 import { DataService } from '../services/data.service';
 import { FormControl } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { LodgePositions } from '../class/LodgePositions';
 
 @Component({
   selector: 'app-profile',
@@ -16,6 +17,8 @@ export class ProfileComponent implements OnInit {
   ea_date: string;
   fc_date: string;
   mm_date: string;
+  lodgePositions = new FormControl();
+  lodgePositionList: string[] = LodgePositions.lodgePositionList;
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     //this.events.push(`${type}: ${event.value}`);
@@ -26,6 +29,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+   
   }
 
   createForm() {
@@ -34,7 +38,7 @@ export class ProfileComponent implements OnInit {
       middle_name: [''],
       last_name: ['', Validators.required],
       email: ['', Validators.required],
-      phone: ['', Validators.required],
+      phone: [''],
       ea_date: [this.ea_date],
       fc_date: [this.fc_date],
       mm_date: [this.mm_date]
