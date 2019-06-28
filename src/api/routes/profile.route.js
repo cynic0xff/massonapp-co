@@ -5,11 +5,13 @@ const profileRoutes = express.Router();
 // Require Product model in our routes module
 let Profile = require('../models/Profile');
 
+
+//routes
 profileRoutes.route('/add').post(function(req, res) {
     let profile = new Profile(req.body);
 
     console.log(`Saving data: ${profile}`);
-    
+
     profile.save()
     .then(profile => {
         res.status(200).json({'Profile': 'Has been saved'});
