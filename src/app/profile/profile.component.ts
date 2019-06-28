@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
   mm_date: string;
   lodgePositions = new FormControl();
   lodgePositionList: string[] = LodgePositions.lodgePositionList;
+  selectedLodgePositions;
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     //this.events.push(`${type}: ${event.value}`);
@@ -41,7 +42,8 @@ export class ProfileComponent implements OnInit {
       phone: [''],
       ea_date: [this.ea_date],
       fc_date: [this.fc_date],
-      mm_date: [this.mm_date]
+      mm_date: [this.mm_date],
+      lodge_positions: [this.selectedLodgePositions]
     });
   }
 
