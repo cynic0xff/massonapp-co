@@ -26,7 +26,10 @@ let Profile = new Schema({
   },
   mm_date: {
     type: String
-  }
+  },
+  lodge_positions: [{
+    type: String
+  }]
 },{
     collection: 'Profile'
 });

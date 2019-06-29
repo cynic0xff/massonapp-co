@@ -29,9 +29,11 @@ export class ProfileComponent implements OnInit {
     this.createForm();
   }
 
+  
   ngOnInit() {
    
   }
+
 
   createForm() {
     this.angForm = this.fb.group({
@@ -43,15 +45,23 @@ export class ProfileComponent implements OnInit {
       ea_date: [this.ea_date],
       fc_date: [this.fc_date],
       mm_date: [this.mm_date],
-      lodge_positions: [this.selectedLodgePositions]
+      lodge_positions: [null],
+      title: ['']
     });
   }
 
   reset() {
-    //TODO
+        this.angForm.reset();
   }
 
-  save(profile_data) {
-    this.dataSvc.saveProfile(profile_data);
+  showValue() {
+    //console.log(this.selectedLodgePositions);
+  }
+
+
+  save() {
+    //add the selected positions to the form values
+    this.angForm.controls['lodge_positions'].setValue(this.selectedLodgePositions);
+    this.dataSvc.saveProfile(this.angForm.value);
   }
 }
