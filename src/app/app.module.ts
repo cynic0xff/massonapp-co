@@ -9,7 +9,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { 
   MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, 
   MatGridListModule, MatCardModule, MatMenuModule, MatInputModule, MatFormFieldModule, 
-  MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule, MatSelectModule  } from '@angular/material';
+  MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule, MatSelectModule, MatSnackBarModule  } from '@angular/material';
 import {MatStepperModule} from '@angular/material/stepper';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -47,6 +47,7 @@ import { environment } from '../environments/environment';
     MatNativeDateModule,
     MatAutocompleteModule,
     MatSelectModule,
+    MatSnackBarModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ MatDatepickerModule ],

@@ -6,6 +6,7 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { LodgePositions } from '../class/LodgePositions';
 import { OfficersRole } from '../class/OfficersRole';
 import { DegreeProficiency } from '../class/DegreeProficiency';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -41,7 +42,7 @@ export class ProfileComponent implements OnInit {
     //this.events.push(`${type}: ${event.value}`);
     //this.ea_date = event.value.toString();
   }
-  constructor(private fb: FormBuilder, private dataSvc: DataService) { 
+  constructor(private fb: FormBuilder, private dataSvc: DataService, private _snackBar: MatSnackBar) { 
     this.createForm();
   }
   
@@ -89,5 +90,14 @@ export class ProfileComponent implements OnInit {
     
     //console.log(this.angForm.value);
     this.dataSvc.saveProfile(this.angForm.value);
+  }
+
+  openSnackBar(message: string, action: string) {
+
+    let msg = `Saved ${message}'s profile successfully`
+    this._snackBar.open(msg, action, {
+      duration: 4000,
+      verticalPosition: 'top'
+    });
   }
 }
