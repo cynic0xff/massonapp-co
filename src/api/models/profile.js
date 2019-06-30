@@ -32,7 +32,13 @@ let Profile = new Schema({
   }],
   officer_role: {
     type: String
-  }
+  },
+  degree_proficiency_1: [{
+    type: String
+  }],
+  degree_proficiency_2: [{
+    type: String
+  }],
 },{
     collection: 'Profile'
 });

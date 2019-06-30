@@ -12,8 +12,8 @@ export class DegreeProficiency {
         return this.rolesPart1;
     }
 
-    rolesPart2List() {
-
+    getRolesForPart2() {
+        return this.rolesPart2;
     }
 
     createRolesPart1List(): void {
@@ -33,8 +33,21 @@ export class DegreeProficiency {
         this.rolesPart1.push('Tyler');
     }
 
-    createRolesPart2List() {
+    createRolesPart2List(): void {
 
+        this.rolesPart2.push('KS');
+        this.rolesPart2.push('SD');
+        this.rolesPart2.push('JA');
+        this.rolesPart2.push('JO');
+        this.rolesPart2.push('JU');
+        this.rolesPart2.push('SGW');
+        this.rolesPart2.push('JD');
+        this.rolesPart2.push('TY');
+        this.rolesPart2.push('GSE');
+        this.rolesPart2.push('FC 10');
+        this.rolesPart2.push('FC 11');
+        this.rolesPart2.push('FC 12');
+        this.rolesPart2.push('WF');
     }
 
 
