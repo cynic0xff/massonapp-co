@@ -87,14 +87,14 @@
           <mat-datepicker #mm_picker></mat-datepicker>
         </mat-form-field>
     </div>
-    <div class="col-sm-4 pt-4">
+    <div class="col-sm-4 pt-5">
         <p class="sub-title">Lodge roles</p>
     </div>
-    <div class="col-sm-4 pt-4">
-        <p class="sub-title">Current Lodge officer role</p>
+    <div class="col-sm-4 pt-5">
+        <p class="sub-title">Current officer role</p>
     </div>
-    <div class="col-sm-4 pt-4">
-        <p class="sub-title">Degree work proficiency</p>
+    <div class="col-sm-4 pt-5">
+        
     </div>
     <div class="col-sm-4">
         <mat-form-field>
@@ -112,12 +112,29 @@
     <div class="col-sm-4">
         <mat-form-field>
             <mat-label>Officer Roles</mat-label>
-            <mat-select formControlName="officerRole">
+            <mat-select formControlName="officer_role">
               <mat-option *ngFor="let role of officerRoleList" [value]="role">
                 {{role}}
               </mat-option>
             </mat-select>
           </mat-form-field>
+    </div>
+    <div class="col-sm-12 pt-5">
+        <p class="sub-title">Degree work proficiency</p>
+    </div>
+    <div class="col-sm-4">
+        <mat-label class="info-text">EA, FC, & MM Degree</mat-label><br>
+        <mat-form-field>
+            <mat-label>1st Part</mat-label>
+            <mat-select [formControl]="degree_work_1" [(value)]="selectedProficiencyRoles1" multiple>
+             <mat-option *ngFor="let pro of degreeProficiencyList" [value]="pro" 
+             (click)="showValue($event.value)">{{pro}}
+             </mat-option>
+            </mat-select>
+          </mat-form-field>
+            
+          <span class="info-text pl-3">{{ selectedProficiencyRoles1 }}</span>
+          
     </div>
     <div class="col-sm-12 text-right">
       <button mat-flat-button color="primary" class="m-2 btn">Reset</button>

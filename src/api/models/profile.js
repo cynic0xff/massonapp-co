@@ -29,7 +29,10 @@ let Profile = new Schema({
   },
   lodge_positions: [{
     type: String
-  }]
+  }],
+  officer_role: {
+    type: String
+  }
 },{
     collection: 'Profile'
 });

@@ -19,7 +19,7 @@ export class OfficersRole {
         this.roles.push('Chaplain');
     }
 
-    get() {
+    get(): string[] {
         return this.roles;
     }
 }

@@ -5,11 +5,8 @@ import { FormControl } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { LodgePositions } from '../class/LodgePositions';
 import { OfficersRole } from '../class/OfficersRole';
+import { DegreeProficiency } from '../class/DegreeProficiency';
 
-export interface Food {
-  value: string;
-  viewValue: string;
-}
 
 @Component({
   selector: 'app-profile',
@@ -23,14 +20,17 @@ export class ProfileComponent implements OnInit {
   ea_date: string;
   fc_date: string;
   mm_date: string;
+  
   lodgePositions = new FormControl();
   lodgePositionList: string[] = LodgePositions.lodgePositionList;
-  
-  //selected drop down positions
   selectedLodgePositions;
   
   officersRole: OfficersRole;
   officerRoleList: string[];
+
+  degree_work_1 = new FormControl();
+  degreeProficiencyList: string[];
+  selectedProficiencyRoles1;
 
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
@@ -44,6 +44,11 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.officersRole = new OfficersRole();
     this.officerRoleList = this.officersRole.get();
+
+    let degree_pro_list = new DegreeProficiency();
+    this.degreeProficiencyList = degree_pro_list.getRolesForPart1();
+
+    console.log(this.degreeProficiencyList);
   }
 
   createForm() {
@@ -57,7 +62,8 @@ export class ProfileComponent implements OnInit {
       fc_date: [this.fc_date],
       mm_date: [this.mm_date],
       lodge_positions: [null],
-      officerRole: ['']
+      officer_role: [null],
+      degree_work_1: [null]
     });
   }
 
@@ -73,6 +79,7 @@ export class ProfileComponent implements OnInit {
   save() {
     //add the selected positions to the form values
     this.angForm.controls['lodge_positions'].setValue(this.selectedLodgePositions);
+    this.angForm.controls['degree_work_1'].setValue(this.selectedProficiencyRoles1);
     this.dataSvc.saveProfile(this.angForm.value);
   }
 }
