@@ -87,16 +87,9 @@
           <mat-datepicker #mm_picker></mat-datepicker>
         </mat-form-field>
     </div>
+    <div class="pt-5"></div>
     <div class="col-sm-4 pt-5">
         <p class="sub-title">Lodge roles</p>
-    </div>
-    <div class="col-sm-4 pt-5">
-        <p class="sub-title">Current officer role</p>
-    </div>
-    <div class="col-sm-4 pt-5">
-        
-    </div>
-    <div class="col-sm-4">
         <mat-form-field>
             <mat-label>Lodge Positions</mat-label>
             <mat-select [formControl]="lodgePositions" [(value)]="selectedLodgePositions" multiple>
@@ -105,11 +98,11 @@
              </mat-option>
             </mat-select>
           </mat-form-field>
-            
-          <span class="info-text pl-3">{{ selectedLodgePositions }}</span>
+          <p class="info-text">{{ selectedLodgePositions }}</p>
           
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 pt-5">
+        <p class="sub-title">Current officer role</p>
         <mat-form-field>
             <mat-label>Officer Roles</mat-label>
             <mat-select formControlName="officer_role">
@@ -119,10 +112,11 @@
             </mat-select>
           </mat-form-field>
     </div>
+
     <div class="col-sm-12 pt-5">
         <p class="sub-title">Degree work proficiency</p>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 pt-3">
         <mat-label class="info-text">EA, FC, & MM Degree</mat-label><br>
         <mat-form-field>
             <mat-label>1st Part</mat-label>
@@ -132,12 +126,10 @@
              </mat-option>
             </mat-select>
           </mat-form-field>
-          <br>
-          <span class="info-text">Selected {{ selectedProficiencyRoles1 }}</span>
-          
+          <p class="info-text">{{ selectedProficiencyRoles1 }}</p>
     </div>
 
-    <div class="col-sm-4">
+    <div class="col-sm-4 pt-3">
         <mat-label class="info-text">EA, FC, & MM Degree</mat-label><br>
         <mat-form-field>
             <mat-label>2nd Part</mat-label>
@@ -147,9 +139,10 @@
              </mat-option>
             </mat-select>
           </mat-form-field>
-          <br>
-          <span class="info-text">Selected {{ selectedProficiencyRoles2 }}</span>
+          <p class="info-text">{{ selectedProficiencyRoles2 }}</p>
     </div>
+  
+
     <div class="col-sm-12 text-right">
       <button mat-flat-button color="primary" class="m-2 btn">Reset</button>
       <button mat-flat-button color="primary"  class="m-2 btn">Save</button>  
