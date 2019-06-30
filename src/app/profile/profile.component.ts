@@ -4,6 +4,12 @@ import { DataService } from '../services/data.service';
 import { FormControl } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { LodgePositions } from '../class/LodgePositions';
+import { OfficersRole } from '../class/OfficersRole';
+
+export interface Food {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-profile',
@@ -19,7 +25,13 @@ export class ProfileComponent implements OnInit {
   mm_date: string;
   lodgePositions = new FormControl();
   lodgePositionList: string[] = LodgePositions.lodgePositionList;
+  
+  //selected drop down positions
   selectedLodgePositions;
+  
+  officersRole: OfficersRole;
+  officerRoleList: string[];
+
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     //this.events.push(`${type}: ${event.value}`);
@@ -28,12 +40,11 @@ export class ProfileComponent implements OnInit {
   constructor(private fb: FormBuilder, private dataSvc: DataService) { 
     this.createForm();
   }
-
   
   ngOnInit() {
-   
+    this.officersRole = new OfficersRole();
+    this.officerRoleList = this.officersRole.get();
   }
-
 
   createForm() {
     this.angForm = this.fb.group({
@@ -46,7 +57,7 @@ export class ProfileComponent implements OnInit {
       fc_date: [this.fc_date],
       mm_date: [this.mm_date],
       lodge_positions: [null],
-      title: ['']
+      officerRole: ['']
     });
   }
 

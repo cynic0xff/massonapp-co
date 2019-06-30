@@ -87,8 +87,16 @@
           <mat-datepicker #mm_picker></mat-datepicker>
         </mat-form-field>
     </div>
-    <div class="col-sm-6 pt-4">
-      <p class="sub-title">Lodge roles</p>
+    <div class="col-sm-4 pt-4">
+        <p class="sub-title">Lodge roles</p>
+    </div>
+    <div class="col-sm-4 pt-4">
+        <p class="sub-title">Current Lodge officer role</p>
+    </div>
+    <div class="col-sm-4 pt-4">
+        <p class="sub-title">Degree work proficiency</p>
+    </div>
+    <div class="col-sm-4">
         <mat-form-field>
             <mat-label>Lodge Positions</mat-label>
             <mat-select [formControl]="lodgePositions" [(value)]="selectedLodgePositions" multiple>
@@ -101,15 +109,15 @@
           <span class="info-text pl-3">{{ selectedLodgePositions }}</span>
           
     </div>
-    <div class="col-sm-6">
-        <label>Title</label>
-                    <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
-                        <option value=""></option>
-                        <option value="Mr">Mr</option>
-                        <option value="Mrs">Mrs</option>
-                        <option value="Miss">Miss</option>
-                        <option value="Ms">Ms</option>
-                    </select>
+    <div class="col-sm-4">
+        <mat-form-field>
+            <mat-label>Officer Roles</mat-label>
+            <mat-select formControlName="officerRole">
+              <mat-option *ngFor="let role of officerRoleList" [value]="role">
+                {{role}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
     </div>
     <div class="col-sm-12 text-right">
       <button mat-flat-button color="primary" class="m-2 btn">Reset</button>
