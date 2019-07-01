@@ -92,7 +92,7 @@ export class ProfileComponent implements OnInit {
     this.dataSvc.saveProfile(this.angForm.value);
   }
 
-  openSnackBar(message: string, action: string) {
+  statusUpdate(message: string, action: string) {
 
     let msg = `Saved ${message}'s profile successfully`
     this._snackBar.open(msg, action, {
