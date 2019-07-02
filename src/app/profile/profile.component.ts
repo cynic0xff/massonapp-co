@@ -7,6 +7,7 @@ import { LodgePositions } from '../class/LodgePositions';
 import { OfficersRole } from '../class/OfficersRole';
 import { DegreeProficiency } from '../class/DegreeProficiency';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LodgeMembership } from '../class/LodgeMembership';
 
 
 @Component({
@@ -37,6 +38,10 @@ export class ProfileComponent implements OnInit {
   degreeProficiencyListPart2: string[];
   selectedProficiencyRoles2;
 
+  lodgeMembership = new FormControl();
+  lodgeMembershipList: string[];
+  selectedlodgeMembership;
+
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     //this.events.push(`${type}: ${event.value}`);
@@ -54,6 +59,9 @@ export class ProfileComponent implements OnInit {
     this.degreeProficiencyListPart1 = degree_pro_list.getRolesForPart1();
     this.degreeProficiencyListPart2 = degree_pro_list.getRolesForPart2();
 
+    let lodgeMembership = new LodgeMembership();
+    this.lodgeMembershipList = lodgeMembership.getLodgeList();
+
   }
 
   createForm() {
@@ -69,7 +77,8 @@ export class ProfileComponent implements OnInit {
       lodge_positions: [null],
       officer_role: [null],
       degree_proficiency_1: [null],
-      degree_proficiency_2: [null]
+      degree_proficiency_2: [null],
+      lodgeMembership: [null]
     });
   }
 
@@ -87,6 +96,7 @@ export class ProfileComponent implements OnInit {
     this.angForm.controls['lodge_positions'].setValue(this.selectedLodgePositions);
     this.angForm.controls['degree_proficiency_1'].setValue(this.selectedProficiencyRoles1);
     this.angForm.controls['degree_proficiency_2'].setValue(this.selectedProficiencyRoles2);
+    this.angForm.controls['lodgeMembership'].setValue(this.selectedlodgeMembership);
     
     //console.log(this.angForm.value);
     this.dataSvc.saveProfile(this.angForm.value);

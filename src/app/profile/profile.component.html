@@ -141,11 +141,27 @@
           </mat-form-field>
           <p class="info-text">{{ selectedProficiencyRoles2 }}</p>
     </div>
-  
+
+    <div class="col-sm-12 pt-5">
+        <p class="sub-title">Lodge Membership</p>
+    </div>
+
+    <div class="col-sm-4 pt-3">
+        <mat-label class="info-text">Select your affiliated lodges</mat-label><br>
+        <mat-form-field>
+            <mat-label>Lodge Membership</mat-label>
+            <mat-select [formControl]="lodgeMembership" [(value)]="selectedLodgeMembership" multiple>
+             <mat-option *ngFor="let lodge of lodgeMembershipList" [value]="lodge" 
+             (click)="showValue($event.value)">{{lodge}}
+             </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p class="info-text">{{ selectedLodgeMembership }}</p>
+    </div>
 
     <div class="col-sm-12 text-right">
       <button mat-flat-button color="primary" class="m-2 btn">Reset</button>
-      <button mat-flat-button color="primary"  class="m-2 btn" (click)="statusUpdate(first_name.value, 'Saved')">Save</button>  
+      <button mat-flat-button color="primary"  class="m-2 btn" (click)="openSnackBar(first_name, 'Saved')">Save</button>  
     </div>
   </div>
   </div>
