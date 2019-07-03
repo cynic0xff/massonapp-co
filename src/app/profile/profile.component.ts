@@ -100,6 +100,7 @@ export class ProfileComponent implements OnInit {
     
     //console.log(this.angForm.value);
     this.dataSvc.saveProfile(this.angForm.value);
+    this.statusUpdate(`${this.angForm.controls['first_name'].value}`, `Success`);
   }
 
   statusUpdate(message: string, action: string) {
