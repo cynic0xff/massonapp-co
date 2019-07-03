@@ -86,8 +86,8 @@ export class ProfileComponent implements OnInit {
         this.angForm.reset();
   }
 
-  showValue() {
-    //console.log(this.selectedLodgePositions);
+  showValue(sv) {
+    console.log(sv);
   }
 
 

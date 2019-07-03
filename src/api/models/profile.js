@@ -39,6 +39,9 @@ let Profile = new Schema({
   degree_proficiency_2: [{
     type: String
   }],
+  lodgeMembership: [{
+    type: String
+  }],
 },{
     collection: 'Profile'
 });
