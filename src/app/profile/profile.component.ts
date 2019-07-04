@@ -42,16 +42,30 @@ export class ProfileComponent implements OnInit {
   lodgeMembershipList: string[];
   selectedlodgeMembership;
 
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     //this.events.push(`${type}: ${event.value}`);
     //this.ea_date = event.value.toString();
   }
-  constructor(private fb: FormBuilder, private dataSvc: DataService, private _snackBar: MatSnackBar) { 
+  constructor(private fb: FormBuilder, private dataSvc: DataService, private _snackBar: MatSnackBar, private _formBuilder: FormBuilder) { 
     this.createForm();
   }
   
   ngOnInit() {
+
+    //new
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+    //end new
+
+
     this.officersRole = new OfficersRole();
     this.officerRoleList = this.officersRole.get();
 
