@@ -43,8 +43,9 @@ export class ProfileComponent implements OnInit {
   selectedlodgeMembership;
 
   isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  contactDetails: FormGroup;
+  degreeDates: FormGroup;
+  degreeProficiencyPart1: FormGroup;
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     //this.events.push(`${type}: ${event.value}`);
@@ -55,16 +56,6 @@ export class ProfileComponent implements OnInit {
   }
   
   ngOnInit() {
-
-    //new
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-    //end new
-
 
     this.officersRole = new OfficersRole();
     this.officerRoleList = this.officersRole.get();
