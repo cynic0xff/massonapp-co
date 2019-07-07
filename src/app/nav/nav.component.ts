@@ -16,7 +16,7 @@ export class NavComponent {
     );
 
     //menu text
-    btn_toggle_text: string = "toggle_on";
+    btn_toggle_text: string = "toggle_off";
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
