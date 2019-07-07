@@ -8,6 +8,7 @@ import { OfficersRole } from '../class/OfficersRole';
 import { DegreeProficiency } from '../class/DegreeProficiency';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LodgeMembership } from '../class/LodgeMembership';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -51,7 +52,8 @@ export class ProfileComponent implements OnInit {
     //this.events.push(`${type}: ${event.value}`);
     //this.ea_date = event.value.toString();
   }
-  constructor(private fb: FormBuilder, private dataSvc: DataService, private _snackBar: MatSnackBar, private _formBuilder: FormBuilder) { 
+  constructor(private fb: FormBuilder, private dataSvc: DataService, private status: MatSnackBar, 
+    private _formBuilder: FormBuilder, private router: Router) { 
     this.createForm();
   }
   
@@ -92,7 +94,7 @@ export class ProfileComponent implements OnInit {
   }
 
   showValue(sv) {
-    console.log(sv);
+    //console.log(sv);
   }
 
 
@@ -107,12 +109,13 @@ export class ProfileComponent implements OnInit {
     //console.log(this.angForm.value);
     this.dataSvc.saveProfile(this.angForm.value);
     this.statusUpdate(`${this.angForm.controls['first_name'].value}`, `Success`);
+    this.router.navigate(['/profile']);
   }
 
   statusUpdate(message: string, action: string) {
 
     let msg = `Saved ${message}'s profile successfully`
-    this._snackBar.open(msg, action, {
+    this.status.open(msg, action, {
       duration: 4000,
       verticalPosition: 'top'
     });
