@@ -40,7 +40,6 @@
                     </div>
                     <div>
                       <button mat-flat-button color="primary" class="m-2 btn" matStepperNext>Next</button>
-                        <!--<button mat-flat-button matStepperNext color="primary" class="m-2 btn" (click)="save(first_name, 'Saved')">Save</button>-->  
                       </div>
                   </mat-step>
               </div>
@@ -51,6 +50,8 @@
 
     <mat-step [stepControl]="degreeDates">
         <ng-template matStepLabel>Degree Initiation Dates</ng-template>
+        <div class="info-text-large vertical-height-space">Select your degree Initiation dates. If you have not completed any degrees then please leave these blank.</div>
+        <div class="vertical-heght-space">&nbsp;</div>
         <span class="vertical-field">
         <mat-form-field>
           <input matInput [matDatepicker]="ea_picker" placeholder="EA Date Initiation"
@@ -87,6 +88,8 @@
     </mat-step>
     <mat-step [stepControl]="degreeDates">
         <ng-template matStepLabel>Lodge Officer Roles</ng-template>
+        <div class="info-text-large vertical-height-space">Select any Lodge positions that you are proficient in and your current office role.</div>
+        <div class="vertical-heght-space">&nbsp;</div>
         <span class="vertical-field">
             <mat-form-field>
                 <mat-label>Lodge Positions</mat-label>
@@ -114,10 +117,8 @@
     </mat-step>
     <mat-step [stepControl]="degreeProficiencyPart1">
         <ng-template matStepLabel>Degree Work Proficiency</ng-template>
-        <span class="vertical-field">
-          <mat-label class="info-text">EA, FC, & MM Degree</mat-label><br>
-        </span>
-      
+        <div class="info-text-large vertical-height-space">Select any degree work that you proficient in.</div>
+        <div class="vertical-heght-space">&nbsp;</div>
         <span class="vertical-field">
           <mat-form-field>
             <mat-label>1st Part</mat-label>
@@ -140,13 +141,17 @@
             </mat-form-field>
         </span>
         <br>
-        Selected: <span class="info-text">{{ selectedProficiencyRoles1 }} </span><span class="info-text">{{ selectedProficiencyRoles2 }}</span>
+        <span class="info-text">Selected: {{ selectedProficiencyRoles1 }} {{ selectedProficiencyRoles2 }}</span>
+        <br>
+        <button mat-flat-button color="primary" class="m-2 btn" matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" class="m-2 btn" matStepperNext>Next</button>
       </mat-step>
       
     
     <mat-step [stepControl]="lodgeMembership">
       <ng-template matStepLabel>Lodge Officer Roles</ng-template>
-      <mat-label class="info-text">Select your affiliated lodges</mat-label>
+      
+      <mat-label class="info-text-large">Select your affiliated lodges</mat-label>
       <div class="vertical-height-space"></div>
         <mat-form-field>
             <mat-label>Lodge Membership</mat-label>
@@ -158,7 +163,6 @@
           </mat-form-field>
           <p class="info-text">Selected: {{ selectedlodgeMembership }}</p>
         
-          <p class="info-text">{{ selectedProficiencyRoles2 }}</p>
           <button mat-flat-button color="primary" class="m-2 btn" matStepperPrevious>Back</button>
           <button mat-flat-button matStepperNext color="primary" class="m-2 btn" (click)="save()">Save</button>
     </mat-step>

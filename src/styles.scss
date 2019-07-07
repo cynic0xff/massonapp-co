@@ -67,8 +67,14 @@ $breakpoint: 960px;
     font-weight: lighter;
   }
 
+  .info-text-large {
+    color: #555;
+    font-weight: lighter;
+    font-size: 1.3rem;
+  }
+
   .vertical-height-space {
-        height: 1rem;
+        min-height: 1rem;
   }
 
   .vertical-field {
