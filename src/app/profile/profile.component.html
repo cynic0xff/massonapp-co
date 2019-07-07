@@ -128,7 +128,6 @@
               </mat-select>
               </mat-form-field>
         </span>
-        <span class="info-text">{{ selectedProficiencyRoles1 }}</span>
         
         <span class="vertical-field">
           <mat-form-field>
@@ -139,19 +138,34 @@
               </mat-option>
               </mat-select>
             </mat-form-field>
-            <span class="info-text">{{ selectedProficiencyRoles2 }}</span>
         </span>
+        <br>
+        Selected: <span class="info-text">{{ selectedProficiencyRoles1 }} </span><span class="info-text">{{ selectedProficiencyRoles2 }}</span>
       </mat-step>
       
     
     <mat-step [stepControl]="degree_proficiency_2">
-      <mat-label class="info-text">EA, FC, & MM Degree</mat-label><br>
+      <ng-template matStepLabel>Lodge Officer Roles</ng-template>
+      <mat-label class="info-text">Select your affiliated lodges</mat-label>
+      <div class="vertical-height-space"></div>
+        <mat-form-field>
+            <mat-label>Lodge Membership</mat-label>
+            <mat-select [formControl]="lodgeMembership" [(value)]="selectedLodgeMembership" multiple>
+             <mat-option *ngFor="let lodge of lodgeMembershipList" [value]="lodge" 
+             (click)="showValue($event.value)">{{lodge}}
+             </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p class="info-text">Selected: {{ selectedLodgeMembership }}</p>
         
           <p class="info-text">{{ selectedProficiencyRoles2 }}</p>
           <button mat-flat-button color="primary" class="m-2 btn" matStepperPrevious>Back</button>
           <button mat-flat-button matStepperNext color="primary" class="m-2 btn" (click)="save()">Save</button>
     </mat-step>
+
   </mat-vertical-stepper>
+
+ 
   </form>
 
 <!--
