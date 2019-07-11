@@ -1,0 +1,20 @@
+<form [formGroup]="lodgeForm">
+    <div class="col-sm-12">
+        <p class="font-light">Lodge Profile</p>
+      </div>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+    <div class="container-fluid jumbotron">
+        <div class="row>">
+            <div class="col-sm-12">
+                <mat-step [stepControl]="lodgeDetails">
+                  <ng-template matStepLabel>Lodge Details</ng-template>
+                  <span class="vertical-field">  
+                    <mat-form-field>
+                       <input matInput placeholder="Lodge number" formControlName="lodgeNumber" required> 
+                    </mat-form-field>
+                  </span>
+                </mat-step>
+            </div>
+        </div>
+    </div>
+</mat-vertical-stepper>
