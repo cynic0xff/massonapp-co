@@ -17,7 +17,6 @@ export class LodgeProfile implements ILodgeProfile {
     createForm() {
         this.lodgeForm = this.fb.group({
             lodgeNumber: [''],
-            lodgeName: ['']
           });
     }
 }
