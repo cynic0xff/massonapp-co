@@ -1,5 +1,5 @@
 import { ILodgeProfile }  from '../interfaces/ILodgeProfile';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 export class LodgeProfile implements ILodgeProfile {
 
@@ -7,7 +7,7 @@ export class LodgeProfile implements ILodgeProfile {
     name: string;
     district: number;
 
-    lodgeForm: FormGroup
+    lodgeForm: FormGroup;
 
     constructor(private fb: FormBuilder) {
         this.createForm();
@@ -15,8 +15,8 @@ export class LodgeProfile implements ILodgeProfile {
 
 
     createForm() {
-        this.lodgeForm = this.fb.group({
-            lodgeNumber: [''],
-          });
+        this.lodgeForm = new FormGroup({
+            lodgeNumber: new FormControl()
+        });
     }
 }
