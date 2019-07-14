@@ -16,13 +16,14 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
   profileForm = new FormGroup({});
   
   isLinear = false;
-  firstFormGroup: FormGroup;
+  lodgeFormGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      lodgeNumber: ['', Validators.required]
+    this.lodgeFormGroup = this._formBuilder.group({
+      lodgeNumber: ['', Validators.required],
+      lodgeName: ['', Validators.required]
     });
   }
 }
