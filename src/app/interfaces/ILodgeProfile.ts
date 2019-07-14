@@ -1,5 +1,5 @@
 export interface ILodgeProfile {
-    number: number;
-    name: string;
+    lodgeNumber: number;
+    lodgeName: string;
     district: number;
 }
