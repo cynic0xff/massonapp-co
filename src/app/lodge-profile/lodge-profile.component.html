@@ -14,5 +14,31 @@
     <mat-form-field class="vertical-field">
       <input matInput placeholder="District" type="number" required>
     </mat-form-field>
+    <br>
+    <br>
+    <mat-form-field class="vertical-field">
+      <input matInput placeholder="Address" type="text" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="vertical-field">
+      <input matInput placeholder="city" type="text" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="vertical-field">
+      <input matInput placeholder="state" type="text" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="vertical-field">
+      <input matInput placeholder="zip" type="text" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Country</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let country of countries" [value]="country.value">
+            {{country}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
   </div>
 </form>

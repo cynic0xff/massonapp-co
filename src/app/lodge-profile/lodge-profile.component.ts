@@ -14,6 +14,7 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
   district: number;
 
   profileForm = new FormGroup({});
+  countries: string[] = ['USA', 'United Kingdom', 'Japan'];
   
   isLinear = false;
   lodgeFormGroup: FormGroup;
