@@ -20,7 +20,8 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
   //days: number[] = Array.from(Array(31), (x, index) => index + 1);
   days: string[] = ['1st', '2nd', '3rd', '4th'];
   times: string[] = ['16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00'];
-  
+  dayNames: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
   isLinear = false;
   lodgeFormGroup: FormGroup;
 
