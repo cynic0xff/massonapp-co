@@ -45,5 +45,34 @@
         <input matInput placeholder="phone" type="tel" required>
       </mat-form-field>
       <br>
+      <br>
+      <mat-form-field>
+        <mat-label>Stated dinner dates</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let day of days" [value]="day.value">
+              {{day}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        and
+        <mat-form-field>
+        <mat-select>
+            <mat-option *ngFor="let day of days" [value]="day.value">
+              {{day}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        of every month
+        <br>
+        Dinner at
+      <mat-form-field>
+          <mat-label>Time</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let time of times" [value]="time.value">
+                {{time}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        <br>
   </div>
 </form>
