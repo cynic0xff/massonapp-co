@@ -3,7 +3,7 @@
     <p class="font-light">Lodge profile</p>
   </div>
   <mat-vertical-stepper [linear]="isLinear" #stepper>
-      <mat-step [stepControl]="lodgeFormGroup">
+      <mat-step [stepControl]="detailsFormGrooup">
           <ng-template matStepLabel>Lodge details</ng-template>
           <mat-form-field class="vertical-field">
               <input matInput placeholder="Lodge number" type="number" required>
@@ -18,7 +18,7 @@
               <button mat-flat-button color="primary" class="m-2 btn" matStepperNext>Next</button>
             </div>
         </mat-step>
-        <mat-step [stepControl]="lodgeFormGroup">
+        <mat-step [stepControl]="locationFormGroup">
             <ng-template matStepLabel>Location</ng-template>
             <mat-form-field class="vertical-field">
               <input matInput placeholder="Address" type="text" required>
@@ -52,7 +52,44 @@
             <button mat-flat-button color="primary" class="m-2 btn" matStepperPrevious>Back</button>
             <button mat-flat-button color="primary" class="m-2 btn" matStepperNext>Next</button>
         </mat-step>
-       
+        <mat-step [stepControl]="statedMeetingsFormGroup">
+            <ng-template matStepLabel>Stated meeting</ng-template>
+            <p class="info-text-large">Enter stated meeting dates and times</p>
+            <mat-form-field class="vertical-field vertical-small-width">
+                  <mat-select>
+                    <mat-option *ngFor="let day of days" [value]="day.value">
+                      {{day}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <span class="vertical-field">and</span>
+                <mat-form-field class="vertical-small-width vertical-field">
+                <mat-select placeholder="">
+                    <mat-option *ngFor="let day of days" [value]="day.value">
+                      {{day}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field class="vertical-field">
+                    <mat-label>Day</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let day of dayNames" [value]="day.value">
+                          {{day}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                of every month
+                <br>
+                <span class="info-text-large vertical-field">Start time</span>
+              <mat-form-field>
+                  <mat-label>Time</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let time of times" [value]="time.value">
+                        {{time}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+        </mat-step>
   </mat-vertical-stepper>
 
   
