@@ -80,7 +80,18 @@
                     </mat-form-field>
                 of every month
                 <br>
-                <span class="info-text-large vertical-field">Start time</span>
+                <span class="info-text-large vertical-field">Meeting start time</span>
+          
+              <mat-form-field>
+                  <mat-label>Time</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let time of times" [value]="time.value">
+                        {{time}}
+                    </mat-option>
+                  </mat-select>
+              </mat-form-field>
+              <br>
+              <span class="info-text-large vertical-field">Dinner start time</span>
               <mat-form-field>
                   <mat-label>Time</mat-label>
                     <mat-select>
