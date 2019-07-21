@@ -39,7 +39,12 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
       districtNumber: [null, Validators.required],
       address1: [null, Validators.required],
       address2: [null],
-      city: [null, Validators.required]
+      city: [null, Validators.required],
+      state: [null, Validators.required],
+      country: [null, Validators.required],
+      phone: [null],
+      zip: [null, Validators.required],
+      countries: [null, Validators.required]
     });
   }
 

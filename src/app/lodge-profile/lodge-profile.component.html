@@ -24,29 +24,29 @@
               <input matInput placeholder="Address" type="text" formControlName="address1" required>
             </mat-form-field>
             <mat-form-field class="vertical-field">
-                <input matInput placeholder="Address 2" type="text" formControlName="address1">
+                <input matInput placeholder="Address 2" type="text" formControlName="address2">
               </mat-form-field>
               <mat-form-field class="vertical-field">
-                <input matInput placeholder="city" type="text" formControlName="city" required>
+                <input matInput placeholder="city" type="text" formControlName="city" formControlName="city" required>
               </mat-form-field>
               <br>
               <mat-form-field class="vertical-field">
-                <input matInput placeholder="state" type="text" required>
+                <input matInput placeholder="state" type="text" formControlName="state" required>
               </mat-form-field>
               <mat-form-field class="vertical-field">
-                <input matInput placeholder="zip" type="text" required>
+                <input matInput placeholder="zip" type="text" formControlName="zip" required>
               </mat-form-field>
               <br>
               <mat-form-field class="vertical-field">
                 <mat-label>Country</mat-label>
-                  <mat-select>
+                  <mat-select formControlName="countries">
                     <mat-option *ngFor="let country of countries" [value]="country.value">
                       {{country}}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
                 <mat-form-field class="vertical-field">
-                  <input matInput placeholder="phone" type="tel" required>
+                  <input matInput placeholder="phone" type="tel">
                 </mat-form-field>
                 <br>
             <button mat-flat-button color="primary" class="m-2 btn" matStepperPrevious>Back</button>
