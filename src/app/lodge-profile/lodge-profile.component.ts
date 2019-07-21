@@ -28,12 +28,18 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
     lodgeNameControl: new FormControl('')
   });
 
+  lodgeDetails = false;
 
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.lodgeFormGroup = this._formBuilder.group({
-      lodgeNumber: ['2', Validators.required]
+      lodgeNumber: [null, Validators.required],
+      lodgeName: [null, Validators.required],
+      districtNumber: [null, Validators.required],
+      address1: [null, Validators.required],
+      address2: [null],
+      city: [null, Validators.required]
     });
   }
 
