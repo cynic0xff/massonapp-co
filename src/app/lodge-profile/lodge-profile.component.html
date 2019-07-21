@@ -6,7 +6,7 @@
       <mat-step [stepControl]="detailsFormGrooup">
           <ng-template matStepLabel>Lodge details</ng-template>
           <mat-form-field class="vertical-field">
-              <input matInput placeholder="Lodge number" type="number" required>
+              <input matInput placeholder="Lodge number" type="tel" formControlName="lodgeNumber" required>
             </mat-form-field>
             <mat-form-field class="vertical-field">
               <input matInput placeholder="Lodge name" type="text" required>
@@ -102,7 +102,7 @@
                   </mat-form-field>
                   <br>
                   <button mat-flat-button color="primary" class="m-2 btn" matStepperPrevious>Back</button>
-                  <button mat-flat-button matStepperNext color="primary" class="m-2 btn" (click)="save()">Save</button>        </mat-step>
+                  <button mat-flat-button matStepperNext color="primary" class="m-2 btn" (click)="save()" [disabled]="!lodgeFormGroup">Save</button>        </mat-step>
   </mat-vertical-stepper>
 
   

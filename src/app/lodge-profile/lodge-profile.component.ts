@@ -23,16 +23,21 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
   dayNames: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   isLinear = false;
-  lodgeFormGroup: FormGroup;
+  
+  lodgeFormGroup = new FormGroup({
+    lodgeNameControl: new FormControl('')
+  });
+
 
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.lodgeFormGroup = this._formBuilder.group({
-      lodgeNumber: ['', Validators.required],
-      lodgeName: ['', Validators.required]
+      lodgeNumber: ['2', Validators.required]
     });
+  }
 
-    console.log(this.days);
+  save() {
+    console.warn(this.lodgeFormGroup.value);
   }
 }
