@@ -40,7 +40,7 @@
               <mat-form-field class="vertical-field">
                 <mat-label>Country</mat-label>
                   <mat-select formControlName="countries">
-                    <mat-option *ngFor="let country of countries" [value]="country.value">
+                    <mat-option *ngFor="let country of countries" [value]="country">
                       {{country}}
                     </mat-option>
                   </mat-select>

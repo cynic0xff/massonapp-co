@@ -51,4 +51,8 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
   save() {
     console.warn(this.lodgeFormGroup.value);
   }
+
+  showValue(val) {
+    console.warn(val);
+  }
 }
