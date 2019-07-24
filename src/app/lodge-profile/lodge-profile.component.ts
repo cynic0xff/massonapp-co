@@ -49,7 +49,7 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
   }
 
   save() {
-    //console.warn(this.lodgeFormGroup.value);
+    console.warn(this.lodgeFormGroup.value);
   }
 
   showValue(val) {
