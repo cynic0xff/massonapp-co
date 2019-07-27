@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ILodgeProfile } from '../interfaces/ILodgeProfile';
+import { DataService } from '../services/data.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-lodge-profile',
@@ -31,7 +33,7 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
 
   lodgeDetails = false;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private dataSvc: DataService, private status: MatSnackBar) {}
 
   ngOnInit() {
     this.lodgeFormGroup = this._formBuilder.group({
@@ -49,10 +51,24 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
   }
 
   save() {
-    //console.warn(this.lodgeFormGroup.value);
+    /*add the selected positions to the form values
+    this.angForm.controls['lodge_positions'].setValue(this.selectedLodgePositions);
+    this.angForm.controls['degree_proficiency_1'].setValue(this.selectedProficiencyRoles1);
+    this.angForm.controls['degree_proficiency_2'].setValue(this.selectedProficiencyRoles2);
+    this.angForm.controls['lodgeMembership'].setValue(this.selectedlodgeMembership);
+    */
+    
+    //console.log(this.angForm.value);
+    this.dataSvc.saveProfile(this.lodgeFormGroup.value);
+    this.statusUpdate(`${this.lodgeFormGroup.controls['lodgeName'].value}`, `Success`);
   }
 
-  showValue(val) {
-    console.warn(val);
+  statusUpdate(message: string, action: string) {
+
+    let msg = `Saved ${message}'s profile successfully`
+    this.status.open(msg, action, {
+      duration: 4000,
+      verticalPosition: 'top'
+    });
   }
 }

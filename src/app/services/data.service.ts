@@ -11,11 +11,12 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  saveProfile(profile_data) {
+  saveProfile(data) {
 
-    console.log(profile_data);
+    console.log(data);
     
-    this.http.post(`${this.url}/add`, profile_data)
+    //TODO: Think about endpoints
+    this.http.post(`${this.url}/add`, data)
     .subscribe( res => console.log('Saved profile successfully'));
   }
 
