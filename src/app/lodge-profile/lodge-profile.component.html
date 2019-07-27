@@ -57,7 +57,7 @@
             <p class="info-text-large">Enter stated meeting dates and times</p>
             <mat-form-field class="vertical-field vertical-small-width">
                   <mat-select>
-                    <mat-option *ngFor="let day of days" [value]="day.value">
+                    <mat-option *ngFor="let day of days" [value]="days">
                       {{day}}
                     </mat-option>
                   </mat-select>
@@ -65,7 +65,7 @@
                 <span class="vertical-field">and</span>
                 <mat-form-field class="vertical-small-width vertical-field">
                 <mat-select placeholder="">
-                    <mat-option *ngFor="let day of days" [value]="day.value">
+                    <mat-option *ngFor="let day of days" [value]="days">
                       {{day}}
                     </mat-option>
                   </mat-select>
@@ -73,7 +73,7 @@
                 <mat-form-field class="vertical-field">
                     <mat-label>Day</mat-label>
                     <mat-select>
-                        <mat-option *ngFor="let day of dayNames" [value]="day.value">
+                        <mat-option *ngFor="let day of dayNames" [value]="dayNames">
                           {{day}}
                         </mat-option>
                       </mat-select>
@@ -85,7 +85,7 @@
               <mat-form-field>
                   <mat-label>Time</mat-label>
                     <mat-select>
-                      <mat-option *ngFor="let time of times" [value]="time.value">
+                      <mat-option *ngFor="let time of times" [value]="times">
                         {{time}}
                     </mat-option>
                   </mat-select>
@@ -95,7 +95,7 @@
               <mat-form-field>
                   <mat-label>Time</mat-label>
                     <mat-select>
-                      <mat-option *ngFor="let time of times" [value]="time.value">
+                      <mat-option *ngFor="let time of times" [value]="times">
                         {{time}}
                       </mat-option>
                     </mat-select>
