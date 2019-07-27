@@ -39,7 +39,7 @@
               <br>
               <mat-form-field class="vertical-field">
                 <mat-label>Country</mat-label>
-                  <mat-select formControlName="countries">
+                  <mat-select formControlName="country">
                     <mat-option *ngFor="let country of countries" [value]="country">
                       {{country}}
                     </mat-option>
@@ -102,8 +102,10 @@
                   </mat-form-field>
                   <br>
                   <button mat-flat-button color="primary" class="m-2 btn" matStepperPrevious>Back</button>
-                  <button mat-flat-button matStepperNext color="primary" class="m-2 btn" (click)="save()" [disabled]="!lodgeFormGroup">Save</button>
+                  <button mat-flat-button matStepperNext color="primary" class="m-2 btn" (click)="save()" [disabled]="!lodgeFormGroup.valid">Save</button>
                 </mat-step>
+
+                
   </mat-vertical-stepper>
 
   

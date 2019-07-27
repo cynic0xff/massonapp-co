@@ -44,8 +44,7 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
       state: [null, Validators.required],
       country: [null, Validators.required],
       phone: [null],
-      zip: [null, Validators.required],
-      countries: [null, Validators.required]
+      zip: [null]
     });
   }
 
