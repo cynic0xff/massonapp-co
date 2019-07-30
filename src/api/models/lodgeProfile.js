@@ -32,9 +32,18 @@ let LodgeProfile = new Schema({
   },
   phone: {
     type: String
+  },
+  statedMeetingDay1: {
+    type: String
+  },
+  statedMeetingDay2: {
+    type: String
+  },
+  statedMeetingDay: {
+    type: String
   }
 },{
-    collection: 'Profile'
+    collection: 'LodgeProfile'
 });
 
 module.exports = mongoose.model('LodgeProfile', LodgeProfile);

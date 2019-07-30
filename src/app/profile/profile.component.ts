@@ -105,7 +105,7 @@ export class ProfileComponent implements OnInit {
     this.angForm.controls['lodgeMembership'].setValue(this.selectedlodgeMembership);
     
     
-    //console.log(this.angForm.value);
+    console.log(this.angForm.value);
     this.dataSvc.saveProfile(this.angForm.value);
     this.statusUpdate(`${this.angForm.controls['first_name'].value}`, `Success`);
   }

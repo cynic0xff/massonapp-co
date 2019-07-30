@@ -4,6 +4,7 @@ import { ILodgeProfile } from '../interfaces/ILodgeProfile';
 import { DataService } from '../services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+
 @Component({
   selector: 'app-lodge-profile',
   templateUrl: './lodge-profile.component.html',
@@ -49,18 +50,14 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
       state: [null, Validators.required],
       country: [null, Validators.required],
       phone: [null],
-      zip: [null]
+      zip: [null],
+      statedMeetingDay1: [null],
+      statedMeetingDay2: [null],
+      statedMeetingDay: [null]
     });
   }
 
   save() {
-    /*add the selected positions to the form values
-    this.angForm.controls['lodge_positions'].setValue(this.selectedLodgePositions);
-    this.angForm.controls['degree_proficiency_1'].setValue(this.selectedProficiencyRoles1);
-    this.angForm.controls['degree_proficiency_2'].setValue(this.selectedProficiencyRoles2);
-    this.angForm.controls['lodgeMembership'].setValue(this.selectedlodgeMembership);
-    */
-    
     console.log(this.lodgeFormGroup.value);
     this.dataSvc.saveLodgeProfile(this.lodgeFormGroup.value);
     this.statusUpdate(`${this.lodgeFormGroup.controls['lodgeName'].value}`, `Success`);

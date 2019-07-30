@@ -56,24 +56,24 @@
             <ng-template matStepLabel>Stated meeting</ng-template>
             <p class="info-text-large">Enter stated meeting dates and times</p>
             <mat-form-field class="vertical-field vertical-small-width">
-                  <mat-select>
-                    <mat-option *ngFor="let day of days" [value]="days">
+                  <mat-select formControlName="statedMeetingDay1">
+                    <mat-option *ngFor="let day of days" [value]="day">
                       {{day}}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
                 <span class="vertical-field">and</span>
                 <mat-form-field class="vertical-small-width vertical-field">
-                <mat-select placeholder="">
-                    <mat-option *ngFor="let day of days" [value]="days">
+                <mat-select formControlName="statedMeetingDay2">
+                    <mat-option *ngFor="let day of days" [value]="day">
                       {{day}}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
                 <mat-form-field class="vertical-field">
                     <mat-label>Day</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let day of dayNames" [value]="dayNames">
+                    <mat-select formControlName="statedMeetingDay">
+                        <mat-option *ngFor="let day of dayNames" [value]="day">
                           {{day}}
                         </mat-option>
                       </mat-select>

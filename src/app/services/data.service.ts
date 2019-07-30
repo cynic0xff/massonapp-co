@@ -22,7 +22,8 @@ export class DataService {
   }
 
   saveLodgeProfile(data) {
-    
+    console.log(`Data in service: ${data}`);
+
     //get the endpoint based on the current url
     this.http.post(`${this.url}${this.router.url}/add`, data)
     .subscribe( res => console.log('Saved profile successfully'));

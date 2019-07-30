@@ -14,11 +14,12 @@ lodgeProfilesRoutes.route('/add').post(function(req, res) {
     //save the lodge profile
     lodgeProfile.save()
     .then(lodgeProfile => {
-        res.status(200).json({'Lodge Profile': '${lodgeProfile} Has been saved'});
+        res.status(200).json({'Lodge Profile': 'success'});
     })
     .catch(err => {
         res.status(400).send('Unable to save profile');
     });
+    
 });
 
 // define get data(index or listing) route
