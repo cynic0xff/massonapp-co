@@ -32,6 +32,7 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
   });
 
   lodgeDetails = false;
+  defaultValue = `Default value`;
 
   constructor(private _formBuilder: FormBuilder, private dataSvc: DataService, private status: MatSnackBar) {}
 
@@ -58,8 +59,8 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
     this.angForm.controls['lodgeMembership'].setValue(this.selectedlodgeMembership);
     */
     
-    //console.log(this.angForm.value);
-    this.dataSvc.saveProfile(this.lodgeFormGroup.value);
+    console.log(this.lodgeFormGroup.value);
+    this.dataSvc.saveLodgeProfile(this.lodgeFormGroup.value);
     this.statusUpdate(`${this.lodgeFormGroup.controls['lodgeName'].value}`, `Success`);
   }
 

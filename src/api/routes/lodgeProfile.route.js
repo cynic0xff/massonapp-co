@@ -7,13 +7,13 @@ let LodgeProfile = require('../models/LodgeProfile');
 
 //routes
 lodgeProfilesRoutes.route('/add').post(function(req, res) {
-    let lodgeProfilerofile = new Profile(req.body);
+    let lodgeProfile = new LodgeProfile(req.body);
 
     console.log(`Saving data: ${lodgeProfile}`);
 
     lodgeProfile.save()
     .then(lodgeProfile => {
-        res.status(200).json({'Profile': 'Has been saved'});
+        res.status(200).json({'Lodge Profile': '${lodgeProfile} Has been saved'});
     })
     .catch(err => {
         res.status(400).send('Unable to save profile');
