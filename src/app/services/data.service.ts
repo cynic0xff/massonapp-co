@@ -13,13 +13,6 @@ export class DataService {
   constructor(private http: HttpClient, private router: Router) { }
 
   saveProfile(data) {
-
-    console.log(data);
-    
-    //get the endpoint based on the current url
-    //this.url = this.router.url;
-    console.log(`Current url from router: ${this.router.url}`);
-
     this.http.post(`${this.url}${this.router.url}/add`, data)
     .subscribe( res => console.log('Saved profile successfully'));
   }
@@ -31,9 +24,6 @@ export class DataService {
   saveLodgeProfile(data) {
     
     //get the endpoint based on the current url
-    //this.url = this.router.url;
-    console.log(`Current url from router: ${this.router.url}`);
-
     this.http.post(`${this.url}${this.router.url}/add`, data)
     .subscribe( res => console.log('Saved profile successfully'));
   }

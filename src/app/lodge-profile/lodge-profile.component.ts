@@ -32,7 +32,9 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
   });
 
   lodgeDetails = false;
-  defaultValue = `Default value`;
+
+  //used for debuging binding
+  defaultValue = ``;
 
   constructor(private _formBuilder: FormBuilder, private dataSvc: DataService, private status: MatSnackBar) {}
 

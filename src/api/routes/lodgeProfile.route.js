@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const lodgeProfilesRoutes = express.Router();
 
-// Require Product model in our routes module
+//require Product model in our routes module
 let LodgeProfile = require('../models/LodgeProfile');
 
 //routes
@@ -11,6 +11,7 @@ lodgeProfilesRoutes.route('/add').post(function(req, res) {
 
     console.log(`Saving data: ${lodgeProfile}`);
 
+    //save the lodge profile
     lodgeProfile.save()
     .then(lodgeProfile => {
         res.status(200).json({'Lodge Profile': '${lodgeProfile} Has been saved'});
@@ -20,7 +21,7 @@ lodgeProfilesRoutes.route('/add').post(function(req, res) {
     });
 });
 
-// Defined get data(index or listing) route
+// define get data(index or listing) route
 lodgeProfilesRoutes.route('/').get(function (req, res) {
     LodgeProfile.find(function (err, profiles){
       if(err){
