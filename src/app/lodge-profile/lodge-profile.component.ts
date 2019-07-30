@@ -54,7 +54,9 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
       statedMeetingDay1: [null],
       statedMeetingDay2: [null],
       statedMeetingDay: [null],
-      statedMeetingTime: [null]
+      statedMeetingTime: [null],
+      statedDinnerTime: [null]
+      
     });
   }
 
