@@ -41,6 +41,9 @@ let LodgeProfile = new Schema({
   },
   statedMeetingDay: {
     type: String
+  },
+  statedMeetingTime: {
+    type: String
   }
 },{
     collection: 'LodgeProfile'

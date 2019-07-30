@@ -84,8 +84,8 @@
           
               <mat-form-field>
                   <mat-label>Time</mat-label>
-                    <mat-select>
-                      <mat-option *ngFor="let time of times" [value]="times">
+                    <mat-select formControlName="statedMeetingTime">
+                      <mat-option *ngFor="let time of times" [value]="time">
                         {{time}}
                     </mat-option>
                   </mat-select>
