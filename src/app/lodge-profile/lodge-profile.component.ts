@@ -61,7 +61,7 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
   }
 
   save() {
-    //console.log(this.lodgeFormGroup.value);
+    console.log(this.lodgeFormGroup.value);
     this.dataSvc.saveLodgeProfile(this.lodgeFormGroup.value);
     this.statusUpdate(`${this.lodgeFormGroup.controls['lodgeName'].value}`, `Success`);
   }
