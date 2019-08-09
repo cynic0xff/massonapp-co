@@ -1,10 +1,24 @@
+<!--<div class="main_container">
+  <div id="inner" class="inner_container">
+    <div id="first" class="first element">First Element</div>
+    <div style="height:500px"></div>
+    <div id="second" class="second element">
+    second Element
+    </div>
+    <div style="height:500px"></div>
+    <div id="third" class="third element">
+     third element
+    </div>
+  </div>
+</div>-->
 <form [formGroup]="angForm">
-      <div class="col-sm-12">
-          <p class="font-light">Profile</p>
-        </div>
+  <div class="col-sm-12">
+      <p class="font-light">Profile</p>
+  </div>
+  <div id="contact_details"></div>
   <mat-vertical-stepper [linear]="isLinear" #stepper>
       <div class="container-fluid jumbotron">
-          <div class="row>">
+          <div class="row">
               <div class="col-sm-12">
                   <mat-step [stepControl]="contactDetails">
                     <ng-template matStepLabel>Contact Details</ng-template>
@@ -171,7 +185,6 @@
 
  
   </form>
-
 <!--
 <form [formGroup]="angForm" (ngSubmit)="save()">
 

@@ -54,6 +54,7 @@ export class ProfileComponent implements OnInit {
   constructor(private fb: FormBuilder, private dataSvc: DataService, private status: MatSnackBar, 
     private _formBuilder: FormBuilder) { 
     this.createForm();
+    
   }
   
   ngOnInit() {
@@ -67,6 +68,7 @@ export class ProfileComponent implements OnInit {
 
     let lodgeMembership = new LodgeMembership();
     this.lodgeMembershipList = lodgeMembership.getLodgeList();
+    
 
   }
 
