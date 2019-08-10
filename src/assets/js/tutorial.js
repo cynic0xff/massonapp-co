@@ -13,7 +13,7 @@ $('document').ready(function(){
 
         { 
           target:'#menu',
-          content: "<strong>The menu</strong><br>This is the menu. From here you can do access your profile, the lodge profile, education and more.",
+          content: "<strong>The menu</strong><br>This is the menu. From here you can access your profile, the lodge profile, education and more.",
           position: 'bottom'
         }
     ]);
