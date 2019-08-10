@@ -32,6 +32,10 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
     lodgeNameControl: new FormControl('')
   });
 
+  locationFormGroup = new FormGroup({});
+  detailsFormGroup = new FormGroup({});
+  statedMeetingsFormGroup = new FormGroup({});
+
   lodgeDetails = false;
 
   //used for debuging binding
@@ -56,7 +60,6 @@ export class LodgeProfileComponent implements OnInit, ILodgeProfile {
       statedMeetingDay: [null],
       statedMeetingTime: [null],
       statedDinnerTime: [null]
-      
     });
   }
 

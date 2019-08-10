@@ -18,11 +18,20 @@ $('document').ready(function(){
         }
     ]);
 
+    var lodge_profile_intro =  new Anno([
+
+      { 
+        target:'#lodge_profile',
+        content: "<strong>Lodge Profile</strong><br>Enter lodge profile details here.",
+        position: 'center-right',
+        arrowPosition: 'center-bottom'
+      }
+  ]);
+
       if(sessionStorage) {
         //display the tutorial element
 
-        console.log(sessionStorage.getItem('display_menu'));
-
+        //menu
         if(sessionStorage.getItem('display_menu') === null) {
 
           //if the menu element is visible
@@ -45,6 +54,18 @@ $('document').ready(function(){
           sessionStorage.setItem('profile_intro', 'false');
         }
       }
+
+       //lodge profile details
+       if(sessionStorage.getItem('lodge_profile_intro') === null) {
+          
+        //if the profile_detail element exists
+        if($('#lodge_profile').length) {
+          lodge_profile_intro.show();
+
+        //set the display to false
+        sessionStorage.setItem('lodge_profile_intro', 'false');
+      }
+    }
         
     }
 });
