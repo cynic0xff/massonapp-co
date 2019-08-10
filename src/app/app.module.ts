@@ -17,13 +17,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { LodgeProfileComponent } from './lodge-profile/lodge-profile.component';
+import { PetitionComponent } from './petition/petition.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     ProfileComponent,
-    LodgeProfileComponent
+    LodgeProfileComponent,
+    PetitionComponent
   ],
   imports: [
     BrowserModule,
