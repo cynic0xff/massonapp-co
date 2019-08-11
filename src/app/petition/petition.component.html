@@ -1,3 +1,39 @@
-<p>
-  petition works!
-</p>
+Florida this day of ,
+To the Master, Wardens, and Members of Lodge No. , F. & A.M.: 
+
+<form [formGroup]="frmPetition">
+    Florida, this 
+  <mat-form-field>
+      <mat-label>Day</mat-label>
+      <mat-select formControlName="day">
+          <mat-option *ngFor="let day of days" [value]="days">
+            {{ day }}
+          </mat-option>
+        </mat-select>
+
+      <!--<input matInput name="day" placeholder="day" 
+            formControlName="day"
+            #day>-->
+  </mat-form-field>
+  day of 
+  <mat-form-field>
+    <input matInput name="month" 
+            placeholder="month" 
+            formControlName="month"
+            #month>
+  </mat-form-field>
+  ,
+  <mat-form-field>
+   <input matInput 
+          name="year" 
+          value="2019" 
+          formControlName="year"
+          #year>
+  </mat-form-field>
+
+  <br>
+  <button mat-flat-button color="primary" 
+          type="submit"
+          (click)="save(frmPetition)">Primary</button>
+
+</form>
