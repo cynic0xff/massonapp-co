@@ -12,6 +12,20 @@ export class PetitionComponent implements OnInit {
   frmPetition: FormGroup;
 
   days: string[] = [];
+  months: string[] = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
 
   constructor(private fb: FormBuilder) { 
     
