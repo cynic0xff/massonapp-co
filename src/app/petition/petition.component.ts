@@ -27,12 +27,15 @@ export class PetitionComponent implements OnInit {
     'December'
   ];
 
+  years: string = new Date().getFullYear().toString();
+
   constructor(private fb: FormBuilder) { 
     
   }
 
   createForm() {
     this.frmPetition = this.fb.group({
+      cityLodge: [null, Validators.required],
       day: [null, Validators.required],
       month: [null, Validators.required],
       year: [null, Validators.required],
@@ -52,7 +55,12 @@ export class PetitionComponent implements OnInit {
   }
 
   save(frm) {
-    console.log(frm.value);
+    this.validateForm(frm);
+  }
+
+  validateForm(frm) {
+    if(!frm.value.year)
+      this.frmPetition.controls['year'].setValue('2019');
   }
 
 }

@@ -2,11 +2,19 @@ Florida this day of ,
 To the Master, Wardens, and Members of Lodge No. , F. & A.M.: 
 
 <form [formGroup]="frmPetition">
-    Florida, this 
+  <mat-form-field>
+    <input matInput
+    name="cityLodge"
+    formControlName="cityLodge"
+    placeholder="City"
+    #cityLodge
+    >
+  </mat-form-field>
+    , Florida, this 
   <mat-form-field>
       <mat-label>Day</mat-label>
       <mat-select formControlName="day">
-          <mat-option *ngFor="let day of days" [value]="days">
+          <mat-option *ngFor="let day of days" [value]="day">
             {{ day }}
           </mat-option>
         </mat-select>
@@ -15,7 +23,7 @@ To the Master, Wardens, and Members of Lodge No. , F. & A.M.:
   <mat-form-field>
       <mat-label>Month</mat-label>
       <mat-select formControlName="month">
-          <mat-option *ngFor="let month of months" [value]="months">
+          <mat-option *ngFor="let month of months" [value]="month">
             {{ month }}
           </mat-option>
         </mat-select>
