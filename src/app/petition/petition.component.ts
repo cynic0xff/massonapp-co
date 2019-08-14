@@ -42,7 +42,8 @@ export class PetitionComponent implements OnInit {
       lodgeNumber: [null],
       godExists: [null],
       firstName: [null],
-      lastName: [null]
+      lastName: [null],
+      address1: [null]
     });
   }
 
@@ -58,6 +59,8 @@ export class PetitionComponent implements OnInit {
 
   save(frm) {
     this.validateForm(frm);
+
+    console.log(frm.value);
   }
 
   validateForm(frm) {
