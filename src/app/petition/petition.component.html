@@ -1,5 +1,8 @@
-Florida this day of ,
-To the Master, Wardens, and Members of Lodge No. , F. & A.M.: 
+<div class="container-fluid jumbotron">
+    <div class="row">
+        <div class="col-sm-12">
+<p class="info-text-large">Florida this day of ,
+To the Master, Wardens, and Members of Lodge No. , F. & A.M.:</p> 
 
 <form [formGroup]="frmPetition">
   <mat-form-field>
@@ -7,10 +10,9 @@ To the Master, Wardens, and Members of Lodge No. , F. & A.M.:
     name="cityLodge"
     formControlName="cityLodge"
     placeholder="City"
-    #cityLodge
-    >
+    #cityLodge>
   </mat-form-field>
-    , Florida, this 
+  <span class="info-text-large">, Florida, this </span> 
   <mat-form-field>
       <mat-label>Day</mat-label>
       <mat-select formControlName="day">
@@ -19,7 +21,7 @@ To the Master, Wardens, and Members of Lodge No. , F. & A.M.:
           </mat-option>
         </mat-select>
   </mat-form-field>
-  day of 
+  <span class="info-text-large"> day of</span> 
   <mat-form-field>
       <mat-label>Month</mat-label>
       <mat-select formControlName="month">
@@ -28,22 +30,40 @@ To the Master, Wardens, and Members of Lodge No. , F. & A.M.:
           </mat-option>
         </mat-select>
   </mat-form-field>
-  ,
-  <mat-form-field>
-   <input matInput 
-          name="year" 
-          value="2019" 
-          formControlName="year"
-          #year>
-  </mat-form-field>
-<p>Having conceived a favorable opinion of the Ancient and Honorable Fraternity of Free and Accepted Masons, and a sincere desire of
+  <br>
+<p class="info-text-large">Having conceived a favorable opinion of the Ancient and Honorable Fraternity of Free and Accepted Masons, and a sincere desire of
     being serviceable to my fellow creatures, unbiased by friends, and uninfluenced by mercenary motives, I do freely and voluntarily offer
     myself as a candidate for initiation into the mysteries of your time-honored institution, and if elected, will cheerfully conform to all the
     ancient and established usages and customs of the Fraternity, which I understand are based on the highest principles and moral precepts
     and incorporate no unseemly conduct. </p>
-  <br>
+    <p class="info-text-large"><strong>(The Petitioner will answer each of the following questions fully - print or type, except signature:)</strong></p>
+  
+    <p class="info-text-large">Do you believe in the existence of one ever-living and true God?
+  <div class="vertical-height-space"></div>
+  
+  <mat-form-field>
+      <mat-label>Select</mat-label>
+      <mat-select formControlName="month">
+          <mat-option value="Y">Yes</mat-option>
+          <mat-option value="N">No</mat-option>
+        </mat-select>
+  </mat-form-field>
+
+  <div class="vertical-height-space"></div>
+  <mat-form-field class="w-50">
+      <mat-label>What is your first name?</mat-label>
+      <input matInput placeholder="First name" formControlName="firstName">
+  </mat-form-field>
+  <mat-form-field class="w-50">
+      <mat-label>What is your last name?</mat-label>
+      <input matInput placeholder="Last name" formControlName="lastName">
+  </mat-form-field>
+    <br>
   <button mat-flat-button color="primary" 
           type="submit"
-          (click)="save(frmPetition)">Primary</button>
+          (click)="save(frmPetition)">Save</button>
 
-</form>
+      </form>
+    </div>
+  </div>
+</div>

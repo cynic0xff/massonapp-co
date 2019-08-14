@@ -26,7 +26,6 @@ export class PetitionComponent implements OnInit {
     'November',
     'December'
   ];
-
   years: string = new Date().getFullYear().toString();
 
   constructor(private fb: FormBuilder) { 
@@ -40,7 +39,10 @@ export class PetitionComponent implements OnInit {
       month: [null, Validators.required],
       year: [null, Validators.required],
       lodgeName: [null],
-      lodgeNumber: [null]
+      lodgeNumber: [null],
+      godExists: [null],
+      firstName: [null],
+      lastName: [null]
     });
   }
 
