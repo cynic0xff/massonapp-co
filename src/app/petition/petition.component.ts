@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { DataService } from '../services/data.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-petition',
@@ -10,7 +12,6 @@ export class PetitionComponent implements OnInit {
 
   //form
   frmPetition: FormGroup;
-
   days: string[] = [];
   months: string[] = [
     'January',
@@ -28,7 +29,7 @@ export class PetitionComponent implements OnInit {
   ];
   years: string = new Date().getFullYear().toString();
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private dataSvc: DataService, private status: MatSnackBar) { 
     
   }
 
@@ -43,7 +44,10 @@ export class PetitionComponent implements OnInit {
       godExists: [null],
       firstName: [null],
       lastName: [null],
-      address1: [null]
+      address1: [null],
+      city: [null],
+      zip: [null],
+      phone: [null]
     });
   }
 
@@ -59,8 +63,18 @@ export class PetitionComponent implements OnInit {
 
   save(frm) {
     this.validateForm(frm);
+    //console.log(this.lodgeFormGroup.value);
+    this.dataSvc.savePetition(this.frmPetition.value);
+    this.statusUpdate(`${this.frmPetition.controls['lodgeName'].value}`, `Success`);
+  }
 
-    console.log(frm.value);
+  statusUpdate(message: string, action: string) {
+
+    let msg = `Saved ${message}'s profile successfully`
+    this.status.open(msg, action, {
+      duration: 4000,
+      verticalPosition: 'top'
+    });
   }
 
   validateForm(frm) {

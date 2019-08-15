@@ -28,4 +28,12 @@ export class DataService {
     this.http.post(`${this.url}${this.router.url}/add`, data)
     .subscribe( res => console.log('Saved profile successfully'));
   }
+
+  savePetition(data) {
+    console.log(`Data in service: ${data}`);
+
+    //get the endpoint based on the current url
+    this.http.post(`${this.url}${this.router.url}/add`, data)
+    .subscribe( res => console.log('Saved petition successfully'));
+  }
 }

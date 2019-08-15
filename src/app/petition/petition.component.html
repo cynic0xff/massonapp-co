@@ -52,18 +52,37 @@ To the Master, Wardens, and Members of Lodge No. , F. & A.M.:</p>
       <mat-label>What is your first name?</mat-label>
       <input matInput placeholder="First name" formControlName="firstName">
   </mat-form-field>
-
-  <mat-form-field class="field-width ml-2">
+<br>
+  <mat-form-field class="field-width">
       <mat-label>What is your last name?</mat-label>
       <input matInput placeholder="Last name" formControlName="lastName">
   </mat-form-field>
-<p>Where do you reside?</p>
+<p></p>
+  <p class="info-text-large"><strong>Where do you reside?</strong></p>
+  <p class="info-text">Indicate Post Office Box or Mailing Address if other than your residence.</p>
+
   <mat-form-field class="field-width">
       <mat-label>Street</mat-label>
       <input matInput placeholder="Street" formControlName="address1">
   </mat-form-field>
-<p class="info-text-large">Indicate Post Office Box or Mailing Address if other than your residence.</p>
-  
+<br>
+<mat-form-field class="field-width">
+    <mat-label>City</mat-label>
+    <input matInput placeholder="city" formControlName="city">
+</mat-form-field>
+<br>
+<mat-form-field class="field-width">
+    <mat-label>Post code/Zip</mat-label>
+    <input matInput placeholder="zip / post code" formControlName="zip">
+</mat-form-field>
+<br>
+<mat-form-field class="field-width">
+    <mat-label>Phone</mat-label>
+    <mat-icon matSuffix>phone</mat-icon>
+    <input matInput type="tel" placeholder="phone" formControlName="phone">
+</mat-form-field>
+<p></p>
+<br>
   <button mat-flat-button color="primary" 
           type="submit"
           (click)="save(frmPetition)">Save</button>
