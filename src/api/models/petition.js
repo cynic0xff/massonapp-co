@@ -10,6 +10,9 @@ let Petition = new Schema({
         },
         month: {
             type: string
+        },
+        godExists: {
+            type: string
         }
     },
     {
