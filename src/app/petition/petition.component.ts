@@ -47,7 +47,8 @@ export class PetitionComponent implements OnInit {
       address1: [null],
       city: [null],
       zip: [null],
-      phone: [null]
+      phone: [null],
+      email: [null]
     });
   }
 

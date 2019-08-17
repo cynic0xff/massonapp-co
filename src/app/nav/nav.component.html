@@ -5,14 +5,61 @@
       [opened]="(isHandset$ | async) === true">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Dashboard</a>
-      <a mat-list-item href="/profile">User Profile</a>
-      <a mat-list-item href="#">Mailbox</a>
-      <a mat-list-item href="/lodge-profile">Lodge Profile</a>
-      <a mat-list-item href="#">Masonic Network</a>
-      <a mat-list-item href="#">Business Network</a>
-      <a mat-list-item href="#">Education</a>
-      <a mat-list-item href="#">Advertise with us</a>
+      <a mat-list-item href="#">
+          <i class="material-icons">
+              dashboard
+              </i>
+          Dashboard
+      </a>
+
+      <a mat-list-item href="/profile">
+        <i class="material-icons">account_box</i>User Profile </a>
+      
+        <a mat-list-item href="#">
+            <i class="material-icons">
+                mail_outline
+            </i>
+            Mailbox
+        </a>
+
+      <a mat-list-item href="/lodge-profile">
+        <i class="material-icons">
+            domain
+        </i>Lodge Profile
+      </a>
+      <a mat-list-item href="/petition">
+        <i class="material-icons">
+            perm_contact_calendar
+          </i>
+          Start a Petition
+        </a>
+      <a mat-list-item href="#">
+          <i class="material-icons">
+              gradient
+          </i>
+          Masonic Network
+        </a>
+      
+      <a mat-list-item href="#">
+          <i class="material-icons">
+              leak_add
+          </i>
+          Business Network
+      </a>
+      
+      <a mat-list-item href="#">
+          <i class="material-icons">
+              school
+          </i>
+          Education
+      </a>
+      <a mat-list-item href="#">
+          <i class="material-icons">
+              store_mall_directory
+          </i>
+          Advertise with us
+      </a>
+      
       <a mat-list-item href="#">About</a>
     </mat-nav-list>
   </mat-sidenav>
