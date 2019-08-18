@@ -27,7 +27,8 @@ export class PetitionComponent implements OnInit {
     'November',
     'December'
   ];
-  years: string = new Date().getFullYear().toString();
+  year: string = new Date().getFullYear().toString();
+  years: string[];
 
   constructor(private fb: FormBuilder, private dataSvc: DataService, private status: MatSnackBar) { 
     
@@ -48,7 +49,8 @@ export class PetitionComponent implements OnInit {
       city: [null],
       zip: [null],
       phone: [null],
-      email: [null]
+      email: [null],
+      resided: [null]
     });
   }
 
@@ -60,6 +62,10 @@ export class PetitionComponent implements OnInit {
   createDays() {
     for(let count=1; count<32; count++)
       this.days.push(count.toString());
+  }
+  createYears() {
+    for(let i=0; i<100; i++)
+      this.years.push(i.toString());
   }
 
   save(frm) {

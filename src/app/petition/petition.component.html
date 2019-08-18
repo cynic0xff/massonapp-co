@@ -89,6 +89,16 @@ To the Master, Wardens, and Members of Lodge No. , F. & A.M.:</p>
 </mat-form-field>
 <br>
 
+<mat-form-field>
+    <mat-label>Resided</mat-label>
+    <mat-select formControlName="resided">
+        <mat-option *ngFor="let year of years" [value]="year">
+          {{ year }}
+        </mat-option>
+      </mat-select>
+</mat-form-field>
+<br>
+
 <p></p>
 <br>
   <button mat-flat-button color="primary" 
