@@ -50,7 +50,8 @@ export class PetitionComponent implements OnInit {
       zip: [null],
       phone: [null],
       email: [null],
-      resided: [null]
+      resided: [null],
+      residedInState: [null]
     });
   }
 
