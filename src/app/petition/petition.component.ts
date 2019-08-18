@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { DataService } from '../services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatDatepickerInputEvent} from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-petition',
@@ -29,6 +30,7 @@ export class PetitionComponent implements OnInit {
   ];
   year: string = new Date().getFullYear().toString();
   years: number[] = [];
+  dob = new FormControl(new Date());
 
   constructor(private fb: FormBuilder, private dataSvc: DataService, private status: MatSnackBar) { 
     
@@ -59,7 +61,9 @@ export class PetitionComponent implements OnInit {
       businessZip: [null],
       businessPhone: [null],
       businessName: [null],
-      ssn: [null]
+      ssn: [null],
+      born: [null],
+      dob: [null]
     });
   }
 
@@ -98,6 +102,14 @@ export class PetitionComponent implements OnInit {
   validateForm(frm) {
     if(!frm.value.year)
       this.frmPetition.controls['year'].setValue('2019');
+  }
+
+  addDOBEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    //this.events.push(`${type}: ${event.value}`);
+    console.log(`${event.value}`);
+
+    let dob = (new Date().getFullYear()) - event.value.getFullYear();
+    console.log(dob);
   }
 
 }

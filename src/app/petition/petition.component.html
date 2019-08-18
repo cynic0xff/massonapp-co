@@ -162,6 +162,19 @@ To the Master, Wardens, and Members of Lodge No. , F. & A.M.:</p>
     <input matInput type="text" placeholder="" formControlName="ssn">
 </mat-form-field>
 
+<p></p>
+<mat-form-field class="field-width">
+    <mat-label>Where were you born?</mat-label>
+    <input matInput type="text" placeholder="" formControlName="born"
+    [value]="dob.value">
+</mat-form-field>
+
+<p></p>
+<mat-form-field>
+    <input matInput [matDatepicker]="dob" placeholder="Date of birth" (dateInput)="addDOBEvent('input', $event)">
+    <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+    <mat-datepicker #dob></mat-datepicker>
+  </mat-form-field>
 
 <p></p>
 <br>
