@@ -28,7 +28,7 @@ export class PetitionComponent implements OnInit {
     'December'
   ];
   year: string = new Date().getFullYear().toString();
-  years: string[];
+  years: number[] = [];
 
   constructor(private fb: FormBuilder, private dataSvc: DataService, private status: MatSnackBar) { 
     
@@ -57,15 +57,17 @@ export class PetitionComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.createDays();
+    this.createYears();
   }
 
   createDays() {
     for(let count=1; count<32; count++)
       this.days.push(count.toString());
   }
+
   createYears() {
-    for(let i=0; i<100; i++)
-      this.years.push(i.toString());
+    for(let i=1; i<100; i++)
+      this.years.push(i);
   }
 
   save(frm) {
