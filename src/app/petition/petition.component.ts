@@ -51,7 +51,10 @@ export class PetitionComponent implements OnInit {
       phone: [null],
       email: [null],
       resided: [null],
-      residedInState: [null]
+      residedInState: [null],
+      residedInPast5Years: [null],
+      occupation: [null],
+      occupationLength: [null]
     });
   }
 

@@ -109,6 +109,30 @@ To the Master, Wardens, and Members of Lodge No. , F. & A.M.:</p>
         </mat-option>
       </mat-select>
 </mat-form-field>
+<p></p>
+<mat-form-field class="field-width">
+    <mat-label>Where have you resided during the past five years?</mat-label>
+    <input matInput type="text" placeholder="" formControlName="residedInPast5Years">
+</mat-form-field>
+
+<p></p>
+<mat-form-field class="field-width">
+    <mat-label>What is your present occupation?</mat-label>
+    <input matInput type="text" placeholder="" formControlName="occupation">
+</mat-form-field>
+
+<br>
+<mat-form-field>
+    <mat-label>How long?</mat-label>
+    <mat-select formControlName="occupationLength">
+        <mat-option *ngFor="let year of years" [value]="year">
+          {{ year }}
+        </mat-option>
+      </mat-select>
+</mat-form-field>
+
+
+
 
 <p></p>
 <br>
