@@ -66,7 +66,10 @@ export class PetitionComponent implements OnInit {
       born: [null],
       dob: [null],
       disability: [null],
-      age: [null]
+      age: [null],
+      reasonPhysical: [null],
+      convicted: [null],
+      reasonConvicted: [null]
     });
   }
 
