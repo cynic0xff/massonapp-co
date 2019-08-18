@@ -165,8 +165,7 @@ To the Master, Wardens, and Members of Lodge No. , F. & A.M.:</p>
 <p></p>
 <mat-form-field class="field-width">
     <mat-label>Where were you born?</mat-label>
-    <input matInput type="text" placeholder="" formControlName="born"
-    [value]="dob.value">
+    <input matInput type="text" placeholder="" formControlName="born">
 </mat-form-field>
 
 <p></p>
@@ -175,7 +174,21 @@ To the Master, Wardens, and Members of Lodge No. , F. & A.M.:</p>
     <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
     <mat-datepicker #dob></mat-datepicker>
   </mat-form-field>
-
+  <p></p>
+<mat-form-field class="field-width">
+    <mat-label>Age?</mat-label>
+    <input matInput type="text" placeholder="" formControlName="age" value="{{age}}">
+</mat-form-field>
+  <p></p>
+  <br>
+  <p class="info-text-large">Do you know of any physical, mental, legal, or moral reason which would prevent you from becoming a Freemason?</p>
+  <mat-form-field>
+      <mat-label>Select</mat-label>
+      <mat-select formControlName="month">
+          <mat-option value="Y">Yes</mat-option>
+          <mat-option value="N">No</mat-option>
+        </mat-select>
+  </mat-form-field>
 <p></p>
 <br>
   <button mat-flat-button color="primary" 

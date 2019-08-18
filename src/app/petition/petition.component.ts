@@ -31,6 +31,7 @@ export class PetitionComponent implements OnInit {
   year: string = new Date().getFullYear().toString();
   years: number[] = [];
   dob = new FormControl(new Date());
+  age: number;
 
   constructor(private fb: FormBuilder, private dataSvc: DataService, private status: MatSnackBar) { 
     
@@ -63,7 +64,9 @@ export class PetitionComponent implements OnInit {
       businessName: [null],
       ssn: [null],
       born: [null],
-      dob: [null]
+      dob: [null],
+      disability: [null],
+      age: [null]
     });
   }
 
@@ -108,8 +111,8 @@ export class PetitionComponent implements OnInit {
     //this.events.push(`${type}: ${event.value}`);
     console.log(`${event.value}`);
 
-    let dob = (new Date().getFullYear()) - event.value.getFullYear();
-    console.log(dob);
+    this.age = (new Date().getFullYear()) - event.value.getFullYear();
+    console.log(this.age);
   }
 
 }
