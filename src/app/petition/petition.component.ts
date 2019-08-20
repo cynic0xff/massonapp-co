@@ -73,7 +73,9 @@ export class PetitionComponent implements OnInit {
       reasonConvicted: [null],
       married: [null],
       dependents: [null],
-      childrenAgeGender: [null]
+      childrenAgeGender: [null],
+      wifesName: [null],
+      appliedBefore: [null]
     });
   }
 
