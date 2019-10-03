@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { DataService } from '../services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {MatDatepickerInputEvent} from '@angular/material/datepicker';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-petition',
@@ -34,7 +35,11 @@ export class PetitionComponent implements OnInit {
   age: number;
   dependents: number[] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
-  constructor(private fb: FormBuilder, private dataSvc: DataService, private status: MatSnackBar) { 
+  constructor(
+    private fb: FormBuilder, 
+    private dataSvc: DataService, 
+    private status: MatSnackBar,
+    private router: Router) { 
     
   }
 
@@ -75,7 +80,15 @@ export class PetitionComponent implements OnInit {
       dependents: [null],
       childrenAgeGender: [null],
       wifesName: [null],
-      appliedBefore: [null]
+      appliedBefore: [null],
+      whenWhatLodge: [null],
+      whatWereTheresults: [null],
+      overthrowTheGovernment: [null],
+      giveDates: [null],
+      demolayMember: [null],
+      whatChapter: [null],
+      demolayOffices: [null],
+      demolayInterest: [null]
     });
   }
 
@@ -100,6 +113,7 @@ export class PetitionComponent implements OnInit {
     //console.log(this.lodgeFormGroup.value);
     this.dataSvc.savePetition(this.frmPetition.value);
     this.statusUpdate(`${this.frmPetition.controls['lodgeName'].value}`, `Success`);
+    this.router.navigate(['/petiton']);
   }
 
   statusUpdate(message: string, action: string) {

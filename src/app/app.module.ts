@@ -18,6 +18,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { LodgeProfileComponent } from './lodge-profile/lodge-profile.component';
 import { PetitionComponent } from './petition/petition.component';
+import { PetitionPart2Component } from './petition-part2/petition-part2.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PetitionComponent } from './petition/petition.component';
     NavComponent,
     ProfileComponent,
     LodgeProfileComponent,
-    PetitionComponent
+    PetitionComponent,
+    PetitionPart2Component
   ],
   imports: [
     BrowserModule,
