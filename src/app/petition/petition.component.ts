@@ -113,7 +113,7 @@ export class PetitionComponent implements OnInit {
     //console.log(this.lodgeFormGroup.value);
     this.dataSvc.savePetition(this.frmPetition.value);
     this.statusUpdate(`${this.frmPetition.controls['lodgeName'].value}`, `Success`);
-    this.router.navigate(['/petiton']);
+    this.router.navigate(['/petition-part2']);
   }
 
   statusUpdate(message: string, action: string) {
