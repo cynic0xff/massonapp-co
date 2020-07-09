@@ -47,13 +47,45 @@
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
-                <mat-form-field class="vertical-field">
-                  <input matInput placeholder="phone" formControlName="phone" type="tel">
-                </mat-form-field>
                 <br>
             <button mat-flat-button color="primary" class="m-2 btn" matStepperPrevious>Back</button>
             <button mat-flat-button color="primary" class="m-2 btn" matStepperNext>Next</button>
         </mat-step>
+      
+        <mat-step [stepControl]="contactFormGroup">
+          <ng-template matStepLabel>Contact Details</ng-template>
+          <mat-form-field class="vertical-field">
+            <input matInput placeholder="phone" formControlName="phone" type="tel" value="{{ defaultValue }}">
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-hint>Include area code</mat-hint>
+          </mat-form-field>
+
+          
+          <mat-form-field class="vertical-field">
+            <input matInput placeholder="email" type="text" formControlName="address1" value="{{ defaultValue }}" required>
+          </mat-form-field>
+          <br>
+          
+          <mat-form-field class="vertical-field">
+            <input matInput placeholder="website" type="text" formControlName="website" value="{{ defaultValue }}">
+          </mat-form-field>
+          <mat-form-field class="vertical-field">
+            <input matInput placeholder="Trestleboard link" type="text" formControlName="trestleboard_link" value="{{ defaultValue }}">
+          </mat-form-field>
+          <br>
+
+          <mat-form-field class="vertical-field">
+            <input matInput placeholder="Calendar link" type="text" formControlName="calendar_link" value="{{ defaultValue }}">
+          </mat-form-field>
+          <mat-form-field class="vertical-field">
+            <input matInput placeholder="Google map" type="text" formControlName="google_map_link" value="{{ defaultValue }}">
+          </mat-form-field>
+          <br>
+
+          <button mat-flat-button color="primary" class="m-2 btn" matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" class="m-2 btn" matStepperNext>Next</button>
+      </mat-step>
+    
         <mat-step [stepControl]="statedMeetingsFormGroup">
             <ng-template matStepLabel>Stated meeting</ng-template>
             <p class="info-text-large">Enter stated meeting dates and times</p>

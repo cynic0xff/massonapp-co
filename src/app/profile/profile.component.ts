@@ -68,7 +68,6 @@ export class ProfileComponent implements OnInit {
 
     let lodgeMembership = new LodgeMembership();
     this.lodgeMembershipList = lodgeMembership.getLodgeList();
-    
 
   }
 
